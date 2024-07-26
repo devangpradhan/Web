@@ -1,7 +1,7 @@
 // Sidebar pin-drops
 (function () {
   const pinTitle = document.querySelector(".pin-title");
-  let pinIcon = document.querySelectorAll(".sidebar-list .fa-thumb-tack");
+  let pinIcon = document.querySelectorAll(".sidebar-list .fa-thumbtack");
   function togglePinnedName() {
     if (document.getElementsByClassName("pined").length) {
       if (!pinTitle.classList.contains("show")) pinTitle.classList.add("show");
