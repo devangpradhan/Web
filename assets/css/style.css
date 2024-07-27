@@ -48569,14 +48569,7 @@ padding-bottom: 0;
 }
 
 
-@keyframes push {
-  50% {
-    transform: scale(0.95);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
+
 
 .btn-add {
   color: #FFFFFF;
@@ -48602,7 +48595,7 @@ padding-bottom: 0;
 	border-radius: 3px;
 } */
 
-.btn {
+.btnz {
   -webkit-tap-highlight-color: transparent;
   transform: translateZ(0);
   display: flex;
@@ -48615,114 +48608,160 @@ padding-bottom: 0;
   margin: 5px;
 }
 
-.btn i {
+.btnz i {
   margin-right: 5px;
+  transition: transform 0.3s, font-size 0.3s;
 }
 
 /* Add Button */
-.btn-add {
+.btnz-add {
   background-color: #28a745;
   border-color: #28a745;
   color: white;
 }
 
-.btn-add:hover {
+.btnz-add:hover {
   background-color: #218838;
   border-color: #1e7e34;
 }
 
+.btnz-add:hover .fa-plus {
+  animation: fa-beat 1s infinite;
+  font-size: 23px;
+}
+
 /* Edit Button */
-.btn-edit {
+.btnz-edit {
   background-color: #fd7e14;
   border-color: #fd7e14;
   color: white;
 }
 
-.btn-edit:hover {
+.btnz-edit:hover {
   background-color: #e36a00;
   border-color: #c65c00;
 }
 
+.btnz-edit:hover .fa-pen-to-square {
+  animation: fa-bounce 1s infinite;
+  font-size: 23px;
+}
+
 /* Update Button */
-.btn-update {
+.btnz-update {
   background-color: #007bff;
   border-color: #007bff;
   color: white;
 }
 
-.btn-update:hover {
+.btnz-update:hover {
   background-color: #0069d9;
   border-color: #0062cc;
 }
 
+.btnz-update:hover .fa-arrows-rotate {
+  animation: fa-spin 1s infinite;
+  font-size: 23px;
+}
+
 /* Approve Button */
-.btn-approve {
+.btnz-approve {
   background-color: #28a745;
   border-color: #28a745;
   color: white;
 }
 
-.btn-approve:hover {
+.btnz-approve:hover {
   background-color: #218838;
   border-color: #1e7e34;
 }
 
+.btnz-approve:hover .fa-check {
+  animation: fa-beat 1s infinite;
+  font-size: 23px;
+}
+
 /* Disapprove Button */
-.btn-disapprove {
+.btnz-disapprove {
   background-color: #dc3545;
   border-color: #dc3545;
   color: white;
 }
 
-.btn-disapprove:hover {
+.btnz-disapprove:hover {
   background-color: #c82333;
   border-color: #bd2130;
 }
 
+.btnz-disapprove:hover .fa-times {
+  animation: fa-shake 1s infinite;
+  font-size: 23px;
+}
+
 /* Clear Button */
-.btn-clear {
+.btnz-clear {
   background-color: #6c757d;
   border-color: #6c757d;
   color: white;
 }
 
-.btn-clear:hover {
+.btnz-clear:hover {
   background-color: #5a6268;
   border-color: #545b62;
 }
 
+.btnz-clear:hover .fa-eraser {
+  animation: fa-flip 1s infinite;
+  font-size: 23px;
+}
+
 /* Delete Button */
-.btn-delete {
+.btnz-delete {
   background-color: #dc3545;
   border-color: #dc3545;
   color: white;
 }
 
-.btn-delete:hover {
+.btnz-delete:hover {
   background-color: #c82333;
   border-color: #bd2130;
 }
 
+.btnz-delete:hover .fa-trash {
+  animation: fa-shake 1s infinite;
+  font-size: 23px;
+}
+
 /* Get Data Button */
-.btn-get-data {
+.btnz-get-data {
   background-color: #17a2b8;
   border-color: #17a2b8;
   color: white;
 }
 
-.btn-get-data:hover {
+.btnz-get-data:hover {
   background-color: #138496;
   border-color: #117a8b;
 }
 
+.btnz-get-data:hover .fa-database {
+  animation: fa-fade 1s infinite;
+  font-size: 23px;
+}
+
 /* Search Button */
-.btn-search {
+.btnz-search {
   background-color: #007bff;
   border-color: #007bff;
   color: white;
 }
 
-.btn-search:hover {
+.btnz-search:hover {
   background-color: #0069d9;
   border-color: #0062cc;
+}
+
+.btnz-search:hover .fa-search {
+  animation: fa-beat-fade 1s infinite;
+  font-size: 23px;
 }
