@@ -48554,47 +48554,6 @@ html[dir=rtl] .timeline-lists.variation-timeline::before {
 
 /* New Button  */
 
-/* 
-.btn-label {
-position: relative;
-left: -12px;
-display: inline-block;
-padding: 6px 12px;
-background: rgba(0, 0, 0, 0.15);
-border-radius: 3px 0 0 3px;
-}
-.btn-labeled {
-padding-top: 0;
-padding-bottom: 0;
-}
-
-
-
-
-.btn-add {
-  color: #FFFFFF;
-  background-color: #FC8286 ;
-  border-color: #FC8286 ;
-  -webkit-tap-highlight-color: transparent;
-  transform: translateZ(0);
-}
-.btn-add:hover {
-  background-color: #FFB3B3;
-  border-color: #FFB3B3;
-}
-.btn-add:hover .fa-plus {
-  animation: fa-bounce 1s infinite;
-}
-
-.btn-label {
-	position: relative;
-	left: -12px;
-	display: inline-block;
-	padding: 6px 12px;
-	background: rgba(0, 0, 0, 0.15);
-	border-radius: 3px;
-} */
-
 .btnz {
   -webkit-tap-highlight-color: transparent;
   transform: translateZ(0);
