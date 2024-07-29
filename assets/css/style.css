@@ -48552,175 +48552,248 @@ html[dir=rtl] .timeline-lists.variation-timeline::before {
 /*# sourceMappingURL=style.css.map */
 
 
-/* New Button  */
-
+/* General Button Styling */
 .btnz {
-  -webkit-tap-highlight-color: transparent;
-  transform: translateZ(0);
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
+  padding: 10px 15px;
+  color: white;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
+  font-size: 16px;
   transition: background-color 0.3s, border-color 0.3s;
-  margin: 5px;
 }
 
-.btnz i {
-  margin-right: 5px;
-  transition: transform 0.3s, font-size 0.3s;
+
+/* General Button Styling */
+.btnz {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
 /* Add Button */
 .btnz-add {
-  background-color: #28a745;
-  border-color: #28a745;
-  color: white;
+  background-color: #46CEAC;
+  border-color: #46CEAC;
 }
-
 .btnz-add:hover {
-  background-color: #218838;
-  border-color: #1e7e34;
+  background-color: #35BA9B;
+  border-color: #61DDBC;
 }
-
-.btnz-add:hover .fa-plus {
+.btnz-add::before {
+  content: "\f067"; /* Unicode for Font Awesome plus icon */
+  font-family: "Font Awesome 6 Pro"; /* Specify the Font Awesome family */
+  font-weight: 900; /* Specify the font weight for solid icons */
+  margin-right: 10px;
+  font-size: 15px;
+  transition: font-size 0.3s;
+}
+.btnz-add:hover::before {
   animation: fa-beat 1s infinite;
-  font-size: 23px;
 }
 
 /* Edit Button */
 .btnz-edit {
-  background-color: #fd7e14;
-  border-color: #fd7e14;
-  color: white;
+  background-color: #FA6C51;
+  border-color: #FA6C51;
 }
-
 .btnz-edit:hover {
-  background-color: #e36a00;
-  border-color: #c65c00;
+  background-color: #E8553E;
+  border-color: #FB836F;
 }
-
-.btnz-edit:hover .fa-pen-to-square {
+.btnz-edit::before {
+  content: "\f044"; /* Unicode for Font Awesome pen icon */
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 900;
+  margin-right: 10px;
+  font-size: 15px;
+  transition: font-size 0.3s;
+}
+.btnz-edit:hover::before {
   animation: fa-bounce 1s infinite;
-  font-size: 23px;
 }
 
 /* Update Button */
 .btnz-update {
-  background-color: #007bff;
-  border-color: #007bff;
-  color: white;
+  background-color: #AC92EA;
+  border-color: #AC92EA;
 }
-
 .btnz-update:hover {
-  background-color: #0069d9;
-  border-color: #0062cc;
+  background-color: #9579DA;
+  border-color: #B3A4EE;
 }
-
-.btnz-update:hover .fa-arrows-rotate {
+.btnz-update::before {
+  content: "\f021"; /* Unicode for Font Awesome sync icon */
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 900;
+  margin-right: 10px;
+  font-size: 15px;
+  transition: font-size 0.3s;
+}
+.btnz-update:hover::before {
   animation: fa-spin 1s infinite;
-  font-size: 23px;
 }
 
 /* Approve Button */
 .btnz-approve {
-  background-color: #28a745;
-  border-color: #28a745;
-  color: white;
+  background-color: #9ED26A;
+  border-color: #9ED26A;
 }
-
 .btnz-approve:hover {
-  background-color: #218838;
-  border-color: #1e7e34;
+  background-color: #89C053;
+  border-color: #B4DF80;
 }
-
-.btnz-approve:hover .fa-check {
+.btnz-approve::before {
+  content: "\f00c"; 
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 900;
+  margin-right: 10px;
+  font-size: 15px;
+  transition: font-size 0.3s;
+}
+.btnz-approve:hover::before {
   animation: fa-beat 1s infinite;
-  font-size: 23px;
 }
 
 /* Disapprove Button */
 .btnz-disapprove {
-  background-color: #dc3545;
-  border-color: #dc3545;
-  color: white;
+  background-color: #EB5463;
+  border-color: #EB5463;
 }
-
 .btnz-disapprove:hover {
-  background-color: #c82333;
-  border-color: #bd2130;
+  background-color: #D94452;
+  border-color: #F76C82;
 }
-
-.btnz-disapprove:hover .fa-times {
-  animation: fa-shake 1s infinite;
-  font-size: 23px;
+.btnz-disapprove::before {
+  content: "\f00d"; 
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 900;
+  margin-right: 10px;
+  font-size: 15px;
+  transition: font-size 0.3s;
+}
+.btnz-disapprove:hover::before {
+  animation: fa-flip 2s infinite;
 }
 
 /* Clear Button */
 .btnz-clear {
-  background-color: #6c757d;
-  border-color: #6c757d;
-  color: white;
+  background-color: #a2a6ac;
+  border-color: #a2a6ac;
 }
-
 .btnz-clear:hover {
-  background-color: #5a6268;
-  border-color: #545b62;
+  background-color: #8d9297;
+  border-color: #cad0d7;
+}
+.btnz-clear::before {
+  content: "\f12d"; /* Unicode for Font Awesome eraser icon */
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 900;
+  margin-right: 10px;
+  font-size: 15px;
+  transition: font-size 0.3s;
+}
+.btnz-clear:hover::before {
+  animation: an-clear 1s infinite;
 }
 
-.btnz-clear:hover .fa-eraser {
-  animation: fa-flip 1s infinite;
-  font-size: 23px;
+@keyframes an-clear {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px); /* Move forward */
+  }
+  100% {
+    transform: translateX(-5px); /* Move backward */
+  }
+  50% {
+    transform: translateX(5px); /* Move forward */
+  }
+  0% {
+    transform: translateX(-5px);
+  }
 }
 
 /* Delete Button */
 .btnz-delete {
-  background-color: #dc3545;
-  border-color: #dc3545;
-  color: white;
+  background-color: #f6463a;
+  border-color: #f6463a;
 }
-
 .btnz-delete:hover {
-  background-color: #c82333;
-  border-color: #bd2130;
+  background-color: #dd3f34;
+  border-color: #f7594e;
 }
-
-.btnz-delete:hover .fa-trash {
+.btnz-delete::before {
+  content: "\f1f8"; /* Unicode for Font Awesome trash icon */
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 900;
+  margin-right: 10px;
+  font-size: 15px;
+  transition: font-size 0.3s;
+}
+.btnz-delete:hover::before {
   animation: fa-shake 1s infinite;
-  font-size: 23px;
 }
 
 /* Get Data Button */
 .btnz-get-data {
-  background-color: #17a2b8;
-  border-color: #17a2b8;
-  color: white;
+  background-color: #4FC0E8;
+  border-color: #4FC0E8;
 }
-
 .btnz-get-data:hover {
-  background-color: #138496;
-  border-color: #117a8b;
+  background-color: #3AADD9;
+  border-color: #66D4F1;
 }
-
-.btnz-get-data:hover .fa-database {
+.btnz-get-data::before {
+  content: "\f1c0"; /* Unicode for Font Awesome database icon */
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 900;
+  margin-right: 10px;
+  font-size: 15px;
+  transition: font-size 0.3s;
+}
+.btnz-get-data:hover::before {
   animation: fa-fade 1s infinite;
-  font-size: 23px;
 }
 
 /* Search Button */
 .btnz-search {
-  background-color: #007bff;
-  border-color: #007bff;
-  color: white;
+  background-color: #FDCD56;
+  border-color: #FDCD56;
 }
-
 .btnz-search:hover {
-  background-color: #0069d9;
-  border-color: #0062cc;
+  background-color: #F5B945;
+  border-color: #FBD277;
+}
+.btnz-search::before {
+  content: "\f002"; /* Unicode for Font Awesome search icon */
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 900;
+  margin-right: 10px;
+  font-size: 15px;
+  transition: font-size 0.3s;
+}
+.btnz-search:hover::before {
+  animation: magnify 1.5s infinite;
 }
 
-.btnz-search:hover .fa-search {
-  animation: fa-beat-fade 1s infinite;
-  font-size: 23px;
+@keyframes magnify {
+  0% { 
+    transform: rotate(0deg)  
+          translateY(5px) rotate(0deg); 
+} 
+
+100% { 
+    transform: rotate(360deg)  
+          translateY(5px) rotate(-360deg); 
+} 
 }
