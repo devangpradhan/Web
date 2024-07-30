@@ -48551,32 +48551,33 @@ html[dir=rtl] .timeline-lists.variation-timeline::before {
 ==========================**/
 /*# sourceMappingURL=style.css.map */
 
-
 /* General Button Styling */
 .btnz {
   display: inline-flex;
   align-items: center;
-  padding: 10px 15px;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 16px;
   transition: background-color 0.3s, border-color 0.3s;
 }
 
-
-/* General Button Styling */
-.btnz {
-  display: inline-flex;
-  align-items: center;
+/* Button Sizes */
+.bt-xl {
+  padding: 15px 20px;
+  font-size: 18px;
+}
+.bt-lg{
   padding: 10px 15px;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s, border-color 0.3s;
+}
+.bt-sm {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+.bt-xsm {
+  padding: 3px 8px;
+  font-size: 12px;
 }
 
 /* Add Button */
@@ -48709,17 +48710,17 @@ html[dir=rtl] .timeline-lists.variation-timeline::before {
   0% {
     transform: translateX(0);
   }
+  25% {
+    transform: translateX(5px); /* Move forward */
+  }
   50% {
+    transform: translateX(-5px); /* Move backward */
+  }
+  75% {
     transform: translateX(5px); /* Move forward */
   }
   100% {
     transform: translateX(-5px); /* Move backward */
-  }
-  50% {
-    transform: translateX(5px); /* Move forward */
-  }
-  0% {
-    transform: translateX(-5px);
   }
 }
 
@@ -48791,7 +48792,6 @@ html[dir=rtl] .timeline-lists.variation-timeline::before {
     transform: rotate(0deg)  
           translateY(5px) rotate(0deg); 
 } 
-
 100% { 
     transform: rotate(360deg)  
           translateY(5px) rotate(-360deg); 
