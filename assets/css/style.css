@@ -61271,3 +61271,53 @@ html[dir="rtl"] .timeline-lists.variation-timeline::before {
     transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
   }
 }
+
+/* Back Button */
+.btnz-back {
+  background-color: #659dd0;
+  border-color: #659dd0;
+}
+.btnz-back:hover {
+  background-color: #4c769d;
+  border-color: #77b9f6;
+}
+.btnz-back::before {
+  content: "\f060"; /* Unicode for Font Awesome search icon */
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 900;
+  margin-right: 10px;
+  font-size: 15px;
+  transition: font-size 0.3s;
+}
+.btnz-back:hover::before {
+  animation: fadeOutLeft 1s infinite;
+}
+
+.fadeOutLeft {
+  -webkit-animation-name: fadeOutLeft;
+  animation-name: fadeOutLeft;
+}
+
+@-webkit-keyframes fadeOutLeft {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeOutLeft {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}

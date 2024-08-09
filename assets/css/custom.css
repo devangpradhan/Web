@@ -1,0 +1,95 @@
+
+.order-card .sales-image {
+    width: 51px;
+    height: 51px;
+    border-radius: 50%;
+    background-color: var(--white);
+    box-shadow: 0px 6px 4px 0px rgba(0, 157, 181, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (min-width: 1560px) and (max-width: 1644px) {
+    .order-card .sales-image {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  @media (min-width: 1200px) and (max-width: 1560px) {
+    .order-card .sales-image {
+      display: none;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1048px) {
+    .order-card .sales-image {
+      display: none;
+    }
+  }
+  .order-card .sales-image img {
+    height: 50px;
+  }
+  @media (min-width: 1560px) and (max-width: 1644px) {
+    .order-card .sales-image img {
+      height: 20px;
+    }
+  }
+
+
+.jackInTheBox {
+    -webkit-animation-name: jackInTheBox;
+    animation-name: jackInTheBox;
+  }
+  
+  @-webkit-keyframes jackInTheBox {
+    from {
+      opacity: 0;
+      -webkit-transform: scale(0.1) rotate(30deg);
+      transform: scale(0.1) rotate(30deg);
+      -webkit-transform-origin: center bottom;
+      transform-origin: center bottom;
+    }
+  
+    50% {
+      -webkit-transform: rotate(-10deg);
+      transform: rotate(-10deg);
+    }
+  
+    70% {
+      -webkit-transform: rotate(3deg);
+      transform: rotate(3deg);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes jackInTheBox {
+    from {
+      opacity: 0;
+      -webkit-transform: scale(0.1) rotate(30deg);
+      transform: scale(0.1) rotate(30deg);
+      -webkit-transform-origin: center bottom;
+      transform-origin: center bottom;
+    }
+  
+    50% {
+      -webkit-transform: rotate(-10deg);
+      transform: rotate(-10deg);
+    }
+  
+    70% {
+      -webkit-transform: rotate(3deg);
+      transform: rotate(3deg);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  
+  
