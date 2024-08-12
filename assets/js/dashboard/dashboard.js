@@ -512,163 +512,169 @@ const category_swiper3 = new Swiper(".sales-overview-slider", {
 });
 
 
-// const datatable = new simpleDatatables.DataTable("#scheme-report", {
-//   paging: false,
-//   tabIndex: 1,
-// });
 
-// var scheme_report = document.querySelector(".datatable-container");
-// scheme_report.className += " custom-scrollbar";
+  // project overview chart
+  var options_overview = {
+    series: [
+      {
+        name: "Earning",
+        type: "line",
+        data: [120, 250, 70, 330, 140, 230, 90, 280, 40, 150, 350, 150, 350],
+      },
+      {
+        name: "Order",
+        type: "line",
+        data: [80, 200, 150, 200, 100, 150, 110, 200, 110, 200, 150, 80, 30],
+      },
+    ],
+    chart: {
+      height: 240,
+      type: "line",
+      stacked: false,
+      toolbar: {
+        show: false,
+      },
+      dropShadow: {
+        enabled: true,
+        top: 2,
+        left: 0,
+        blur: 4,
+        color: "#000",
+        opacity: 0.08,
+      },
+    },
+    stroke: {
+      width: [2, 2, 2],
+      curve: "smooth",
+    },
+    grid: {
+      show: true,
+      borderColor: "var(--chart-border)",
+      strokeDashArray: 0,
+      position: "back",
+      xaxis: {
+        lines: {
+          show: true,
+        },
+      },
+      padding: {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+      },
+    },
+    plotOptions: {
+      bar: {
+        columnWidth: "50%",
+      },
+    },
+    colors: ["#009DB5", "#83BF6E"],
+    fill: {
+      opacity: 1,
+      type: "solid",
+    },
+    labels: [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+    ],
+    xaxis: {
+      type: "category",
+      tickAmount: 4,
+      tickPlacement: "between",
+      tooltip: {
+        enabled: false,
+      },
+      axisBorder: {
+        color: "var(--chart-border)",
+      },
+      axisTicks: {
+        show: false,
+      },
+    },
+    legend: {
+      show: false,
+    },
+    yaxis: {
+      min: 0,
+      tickAmount: 4,
+      tickPlacement: "between",
+      labels: {
+        formatter: function (val) {
+          return val + "K";
+        },
+        offsetX: -5,
+      },
+    },
+    tooltip: {
+      shared: false,
+      intersect: false,
+    },
+    responsive: [
+      {
+        breakpoint: 1200,
+        options: {
+          chart: {
+            height: 250,
+          },
+        },
+      },
+      {
+        breakpoint: 1023,
+        options: {
+          chart: {
+            height: 260,
+          },
+        },
+      },
+      {
+        breakpoint: 1008,
+        options: {
+          chart: {
+            height: 268,
+          },
+        },
+      },
+      {
+        breakpoint: 1007,
+        options: {
+          chart: {
+            height: 250,
+          },
+        },
+      },
+      {
+        breakpoint: 992,
+        options: {
+          chart: {
+            height: 240,
+          },
+        },
+      },
+    ],
+  };
 
-// (function () {
-//   // activity chart
-//   var options_earning = {
-//     series: [
-//       {
-//         name: "Earning",
-//         data: [4, 3, 3, 3, 4, 3, 3, 4, 5, 3.5, 2.5, 2.5],
-//       },
-//     ],
-//     chart: {
-//       height: 100,
-//       type: "bar",
-//       toolbar: {
-//         show: false,
-//       },
-//       dropShadow: {
-//         enabled: true,
-//         top: 10,
-//         left: 0,
-//         blur: 3,
-//         color: "var(--theme-default)",
-//         opacity: 0.25,
-//       },
-//     },
-//     plotOptions: {
-//       bar: {
-//         borderRadius: 2,
-//         borderRadiusApplication: "around",
-//         borderRadiusWhenStacked: "last",
-//         columnWidth: "25%",
-//       },
-//     },
-//     dataLabels: {
-//       enabled: false,
-//     },
-//     xaxis: {
-//       categories: ["S", "M", "T", "W", "T", "F", "S", "s", "m", "t", "w", "t"],
-//       labels: {
-//         show: false,
-//       },
-//       axisBorder: {
-//         show: false,
-//       },
-//       axisTicks: {
-//         show: false,
-//       },
-//       tooltip: {
-//         enabled: false,
-//       },
-//     },
-//     yaxis: {
-//       axisBorder: {
-//         show: false,
-//       },
-//       axisTicks: {
-//         show: false,
-//       },
-//       labels: {
-//         show: false,
-//       },
-//     },
-//     grid: {
-//       show: false,
-//     },
-//     colors: ["var(--theme-default)"],
-//   };
+  var chart_overview = new ApexCharts(
+    document.querySelector("#project-overview"),
+    options_overview
+  );
 
-//   var chart_earning = new ApexCharts(
-//     document.querySelector("#earnings-chart"),
-//     options_earning
-//   );
-//   chart_earning.render();
+  chart_overview.render();
 
-//   // total client chart
-//   var options_client = {
-//     series: [
-//       {
-//         data: [0, 15, 15, 10, 10, 20, 20, 25, 25, 25],
-//       },
-//     ],
-//     chart: {
-//       type: "area",
-//       height: 145,
-//       toolbar: {
-//         show: false,
-//       },
-//     },
-//     stroke: {
-//       curve: "smooth",
-//       width: 2,
-//     },
-//     xaxis: {
-//       type: "category",
-//       categories: [
-//         "jan",
-//         "feb",
-//         "mar",
-//         "apr",
-//         "may",
-//         "jun",
-//         "july",
-//         "aug",
-//         "sep",
-//         "oct",
-//       ],
-//       labels: {
-//         show: false,
-//       },
-//       axisBorder: {
-//         show: false,
-//       },
-//       axisTicks: {
-//         show: false,
-//       },
-//       tooltip: {
-//         enabled: false,
-//       },
-//     },
-//     grid: {
-//       show: false,
-//       padding: {
-//         left: -60,
-//       },
-//     },
-//     yaxis: {
-//       show: false,
-//     },
-//     dataLabels: {
-//       enabled: false,
-//     },
-//     markers: {
-//       hover: {
-//         sizeOffset: 4,
-//       },
-//     },
-//     colors: ["#F99B0D"],
-//     fill: {
-//       type: "gradient",
-//       gradient: {
-//         shade: "light",
-//         type: "vertical",
-//         shadeIntensity: 0.1,
-//         inverseColors: true,
-//         opacityFrom: 0.5,
-//         opacityTo: 0,
-//         stops: [0, 100],
-//       },
-//     },
-//   };
-// }
-// )
-  
+  window.addEventListener("resize", function (event) {
+    document.querySelector("#project-overview").innerHTML = "";
+    var chart_overview = new ApexCharts(
+      document.querySelector("#project-overview"),
+      options_overview
+    );
+    chart_overview.render();
+  });

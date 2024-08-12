@@ -327,6 +327,7 @@ project_status.className += " custom-scrollbar";
     );
     chart_overview.render();
   });
+  
   // bar overview chart
   var options_bar = {
     series: [
