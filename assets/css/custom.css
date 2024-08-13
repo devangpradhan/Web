@@ -1,4 +1,3 @@
-
 /* General Button Styling */
 
 .btnz {
@@ -179,8 +178,8 @@
 
 /* Delete Button */
 .btnz-delete {
-  background-color: #f6463a;
-  border-color: #f6463a;
+  background-color: #f48688;
+  border-color: #f48688;
 }
 .btnz-delete:hover {
   background-color: #dd3f34;
@@ -418,36 +417,76 @@
 /* Card Sales */
 
 .card-header-right-icon .sales-image {
-    width: 51px;
-    height: 51px;
-    border-radius: 50%;
-    background-color: var(--white);
-    box-shadow: 0px 6px 4px 0px rgba(0, 157, 181, 0.05);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 51px;
+  height: 51px;
+  border-radius: 50%;
+  background-color: var(--white);
+  box-shadow: 0px 6px 4px 0px rgba(0, 157, 181, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 1560px) and (max-width: 1644px) {
+  .card-header-right-icon.sales-image {
+    width: 40px;
+    height: 40px;
   }
-  @media (min-width: 1560px) and (max-width: 1644px) {
-    .card-header-right-icon.sales-image {
-      width: 40px;
-      height: 40px;
-    }
+}
+@media (min-width: 1200px) and (max-width: 1560px) {
+  .card-header-right-icon.sales-image {
+    display: none;
   }
-  @media (min-width: 1200px) and (max-width: 1560px) {
-    .card-header-right-icon.sales-image {
-      display: none;
-    }
+}
+@media (min-width: 768px) and (max-width: 1048px) {
+  .card-header-right-icon.sales-image {
+    display: none;
   }
-  @media (min-width: 768px) and (max-width: 1048px) {
-    .card-header-right-icon.sales-image {
-      display: none;
-    }
-  }
+}
+.card-header-right-icon.sales-image img {
+  height: 50px;
+}
+@media (min-width: 1560px) and (max-width: 1644px) {
   .card-header-right-icon.sales-image img {
-    height: 50px;
+    height: 20px;
   }
-  @media (min-width: 1560px) and (max-width: 1644px) {
-    .card-header-right-icon.sales-image img {
-      height: 20px;
-    }
+}
+
+/* Card Buttons */
+
+#topline-top-user-tab i {
+  font-size: 20px;
+  color: #f48688;
+}
+#topline-top-user-tab {
+  border-bottom-color: rgb(230, 105, 96);
+  border-bottom-width: 1px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#topline-top-description-tab i {
+  font-size: 20px;
+  color: #f48688;
+}
+#topline-top-description-tab {
+  border-bottom-color: rgb(230, 105, 96);
+  border-bottom-width: 1px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+
+#fullreport {
+  padding-left : 0px;
+  width : 30px;
+  max-width : 30px;
+  height : 30px;
+  max-height : 30px;
+  border-top-left-radius : 5px;
+  border-top-right-radius : 5px;
+  border-bottom-right-radius : 5px;
+  border-bottom-left-radius : 5px;
+  padding-top : 0px;
+  padding-right : 0px;
+  padding-bottom : 0px;
   }

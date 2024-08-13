@@ -1122,3 +1122,89 @@ var chart_client = new ApexCharts(
   options_client
 );
 chart_client.render();
+
+// Sales Chart
+
+document.addEventListener("DOMContentLoaded", function() {
+  var options = {
+      series: [{
+          name: 'Yearly',
+          data: [
+              { x: '2021', y: 1000 },
+              { x: '2022', y: 1500 },
+              { x: '2023', y: 1000 },
+              { x: '2024', y: 1500 },
+              // Add more yearly data here
+          ]
+      }, {
+          name: 'Monthly',
+          data: [
+              { x: 'Jan', y: 100 },
+              { x: 'Feb', y: 150 },
+              { x: 'Mar', y: 100 },
+              { x: 'Apr', y: 150 },
+              { x: 'May', y: 100 },
+              { x: 'Jun', y: 150 },
+              { x: 'Jul', y: 100 },
+              { x: 'Aug', y: 150 },
+              { x: 'Sep', y: 100 },
+              { x: 'Oct', y: 150 },
+              { x: 'Nov', y: 100 },
+              { x: 'Dec', y: 150 },
+
+              // Add more monthly data here
+          ]
+      }, {
+          name: 'Weekly',
+          data: [
+              { x: 'Week 1', y: 20 },
+              { x: 'Week 2', y: 30 },
+              { x: 'Week 3', y: 20 },
+              { x: 'Week 4', y: 30 },
+              // Add more weekly data here
+          ]
+      }],
+      chart: {
+          height: 350,
+          type: 'line',
+          stacked: false,
+          toolbar: {
+              show: true,
+              tools: {
+                  download: true,
+                  zoomin: true,
+                  zoomout: true,
+                  pan: true,
+                  reset: true
+              }
+          }
+      },
+      dataLabels: {
+          enabled: false
+      },
+      stroke: {
+          curve: 'smooth'
+      },
+      xaxis: {
+          categories: ['Yearly', 'Monthly', 'Weekly'],
+          title: {
+              text: 'Time Period'
+          }
+      },
+      yaxis: {
+          title: {
+              text: 'Sales Amount'
+          }
+      },
+      tooltip: {
+          shared: true,
+          intersect: false
+      },
+      legend: {
+          position: 'top'
+      }
+  };
+
+  var chart = new ApexCharts(document.querySelector("#Sales-Chart"), options);
+  chart.render();
+});
