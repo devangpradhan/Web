@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <li class="sidebar-list">
+        <i class="fa fa-thumbtack"></i>
+        <a class="sidebar-link sidebar-title" href="#">
+            <svg class="stroke-icon">
+                <use href="/assets/svg/icon-sprite.svg#stroke-form"></use>
+            </svg>
+            <span>Forms</span>
+        </a>
+        <ul class="sidebar-submenu">
+            <li>
+                <a class="submenu-title submenu-wrapper" href="#">
+                    Form Controls
+                    <span class="sub-arrow"><i class="fa fa-angle-right"></i></span>
+                </a>
+                <ul class="nav-sub-childmenu submenu-content">
+                    <li><a href="form-validation.html">Form Validation</a></li>
+                    <li><a href="base-input.html">Base Inputs</a></li>
+                    <li><a href="radio-checkbox-control.html">Checkbox & Radio</a></li>
+                    <li><a href="input-group.html">Input Groups</a></li>
+                    <li><a href="input-mask.html">Input Mask</a></li>
+                    <li><a href="megaoptions.html">Mega Options</a></li>
+                    <!-- Level 4 Menu -->
+                    <li>
+                        <a class="submenu-title submenu-wrapper" href="#">
+                            Advanced Controls
+                            <span class="sub-arrow"><i class="fa fa-angle-right"></i></span>
+                        </a>
+                        <ul class="nav-sub-sub-childmenu submenu-content">
+                            <li><a href="dynamic-forms.html">Dynamic Forms</a></li>
+                            <li><a href="nested-controls.html">Nested Controls</a></li>
+                            <li><a href="custom-controls.html">Custom Controls</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+
+
+    <style>
+        /* Level 4 Menu Styles */
+        .nav-sub-sub-childmenu {
+            display: none;
+            margin-left: 20px;
+            /* Adjust as needed */
+        }
+
+        .nav-sub-childmenu .submenu-title:hover+.nav-sub-sub-childmenu {
+            display: block;
+        }
+
+        .nav-sub-sub-childmenu li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-sub-sub-childmenu li a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .nav-sub-sub-childmenu li a:hover {
+            background-color: var(--hover-background-color);
+        }
+    </style>
+
+</body>
+
+</html>

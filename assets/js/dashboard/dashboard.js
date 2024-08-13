@@ -521,11 +521,11 @@ const category_swiper3 = new Swiper(".sales-overview-slider", {
         type: "line",
         data: [120, 250, 70, 330, 140, 230, 90, 280, 40, 150, 350, 150, 350],
       },
-      {
-        name: "Order",
-        type: "line",
-        data: [80, 200, 150, 200, 100, 150, 110, 200, 110, 200, 150, 80, 30],
-      },
+      // {
+      //   name: "Order",
+      //   type: "line",
+      //   data: [80, 200, 150, 200, 100, 150, 110, 200, 110, 200, 150, 80, 30],
+      // },
     ],
     chart: {
       height: 240,
@@ -678,3 +678,447 @@ const category_swiper3 = new Swiper(".sales-overview-slider", {
     );
     chart_overview.render();
   });
+
+  // bar overview chart
+  var options_bar = {
+    series: [
+      {
+        name: "Revenue",
+        data: [
+          30, 40, 18, 25, 18, 10, 20, 35, 22, 40, 30, 38, 20, 35, 11, 28, 40,
+          11, 28, 40, 11, 28, 40, 11, 28, 40, 11, 11, 28, 40, 11, 28, 40, 11,
+          28, 40, 11,
+        ],
+      },
+    ],
+    chart: {
+      type: "bar",
+      height: 180,
+      toolbar: {
+        show: false,
+      },
+    },
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: "55%",
+      },
+    },
+    colors: ["var(--chart-dashed-border)"],
+    grid: {
+      show: false,
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      show: true,
+      width: 2,
+      colors: ["transparent"],
+    },
+    xaxis: {
+      categories: [
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+      ],
+      labels: {
+        show: false,
+      },
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+    },
+    yaxis: {
+      labels: {
+        show: false,
+      },
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+    },
+    fill: {
+      opacity: 0.7,
+    },
+    tooltip: {
+      enabled: false,
+    },
+    states: {
+      normal: {
+        filter: {
+          type: "none",
+        },
+      },
+      hover: {
+        filter: {
+          type: "none",
+        },
+      },
+      active: {
+        allowMultipleDataPointsSelection: false,
+        filter: {
+          type: "none",
+        },
+      },
+    },
+    responsive: [
+      {
+        breakpoint: 405,
+        options: {
+          chart: {
+            height: 150,
+          },
+        },
+      },
+    ],
+  };
+
+  var chart_bar = new ApexCharts(
+    document.querySelector("#project-bar"),
+    options_bar
+  );
+  chart_bar.render();
+
+
+// sales chart
+    var options_client = {
+      series: [
+        {
+          data: [0, 15, 15, 10, 10, 20, 20, 25, 25, 25],
+        },
+      ],
+      chart: {
+        type: "area",
+        height: 145,
+        toolbar: {
+          show: false,
+        },
+      },
+      stroke: {
+        curve: "smooth",
+        width: 2,
+      },
+      xaxis: {
+        type: "category",
+        categories: [
+          "jan",
+          "feb",
+          "mar",
+          "apr",
+          "may",
+          "jun",
+          "july",
+          "aug",
+          "sep",
+          "oct",
+        ],
+        labels: {
+          show: false,
+        },
+        axisBorder: {
+          show: false,
+        },
+        axisTicks: {
+          show: false,
+        },
+        tooltip: {
+          enabled: false,
+        },
+      },
+      grid: {
+        show: false,
+        padding: {
+          left: -60,
+        },
+      },
+      yaxis: {
+        show: false,
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      markers: {
+        hover: {
+          sizeOffset: 4,
+        },
+      },
+      colors: ["#fda8aa"],
+      fill: {
+        type: "gradient",
+        gradient: {
+          shade: "light",
+          type: "vertical",
+          shadeIntensity: 0.1,
+          inverseColors: true,
+          opacityFrom: 0.5,
+          opacityTo: 0,
+          stops: [0, 100],
+        },
+      },
+    };
+  
+    var chart_client = new ApexCharts(
+      document.querySelector("#Daily-Chart"),
+      options_client
+    );
+    chart_client.render();
+  
+    
+// Weekly Sales chart
+
+var options_client = {
+  series: [
+    {
+      data: [0, 15, 15, 10, 10, 20, 20, ],
+    },
+  ],
+  chart: {
+    type: "area",
+    height: 145,
+    toolbar: {
+      show: false,
+    },
+  },
+  stroke: {
+    curve: "smooth",
+    width: 2,
+  },
+  xaxis: {
+    type: "category",
+    categories: [
+      "mon",
+      "tue",
+      "wed",
+      "thu",
+      "fri",
+      "sat",
+      "sun",
+    ],
+    labels: {
+      show: false,
+    },
+    axisBorder: {
+      show: false,
+    },
+    axisTicks: {
+      show: false,
+    },
+    tooltip: {
+      enabled: false,
+    },
+  },
+  grid: {
+    show: false,
+    padding: {
+      left: -60,
+    },
+  },
+  yaxis: {
+    show: false,
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  markers: {
+    hover: {
+      sizeOffset: 4,
+    },
+  },
+  colors: ["#fd9b9e"],
+  fill: {
+    type: "gradient",
+    gradient: {
+      shade: "light",
+      type: "vertical",
+      shadeIntensity: 0.1,
+      inverseColors: true,
+      opacityFrom: 0.5,
+      opacityTo: 0,
+      stops: [0, 100],
+    },
+  },
+};
+
+var chart_client = new ApexCharts(
+  document.querySelector("#Weekly-Chart"),
+  options_client
+);
+chart_client.render();
+
+// sales chart
+var options_client = {
+  series: [
+    {
+      data: [0, 15, 15, 10, 10, 20, 20, 25, 25, 25],
+    },
+  ],
+  chart: {
+    type: "area",
+    height: 145,
+    toolbar: {
+      show: false,
+    },
+  },
+  stroke: {
+    curve: "smooth",
+    width: 2,
+  },
+  xaxis: {
+    type: "category",
+    categories: [
+      "jan",
+      "feb",
+      "mar",
+      "apr",
+      "may",
+      "jun",
+      "july",
+      "aug",
+      "sep",
+      "oct",
+    ],
+    labels: {
+      show: false,
+    },
+    axisBorder: {
+      show: false,
+    },
+    axisTicks: {
+      show: false,
+    },
+    tooltip: {
+      enabled: false,
+    },
+  },
+  grid: {
+    show: false,
+    padding: {
+      left: -60,
+    },
+  },
+  yaxis: {
+    show: false,
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  markers: {
+    hover: {
+      sizeOffset: 4,
+    },
+  },
+  colors: ["#fc8f92"],
+  fill: {
+    type: "gradient",
+    gradient: {
+      shade: "light",
+      type: "vertical",
+      shadeIntensity: 0.1,
+      inverseColors: true,
+      opacityFrom: 0.5,
+      opacityTo: 0,
+      stops: [0, 100],
+    },
+  },
+};
+
+var chart_client = new ApexCharts(
+  document.querySelector("#Monthly-Chart"),
+  options_client
+);
+chart_client.render();
+
+// Yearly chart
+var options_client = {
+  series: [
+    {
+      data: [0, 1, 15, 10, 5, 20, 20, 25, 10, 25],
+    },
+  ],
+  chart: {
+    type: "area",
+    height: 145,
+    toolbar: {
+      show: false,
+    },
+  },
+  stroke: {
+    curve: "smooth",
+    width: 2,
+  },
+  xaxis: {
+    type: "category",
+    categories: [
+      "2023",
+      "2022",
+      "2021",
+      "2020",
+      "2019",
+      "2018",
+      "2017",
+      "2016",
+      "2015",
+      "2014",
+    ],
+    labels: {
+      show: false,
+    },
+    axisBorder: {
+      show: false,
+    },
+    axisTicks: {
+      show: false,
+    },
+    tooltip: {
+      enabled: false,
+    },
+  },
+  grid: {
+    show: false,
+    padding: {
+      left: -60,
+    },
+  },
+  yaxis: {
+    show: false,
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  markers: {
+    hover: {
+      sizeOffset: 4,
+    },
+  },
+  colors: ["#fc8f92"],
+  fill: {
+    type: "gradient",
+    gradient: {
+      shade: "light",
+      type: "vertical",
+      shadeIntensity: 0.1,
+      inverseColors: true,
+      opacityFrom: 0.5,
+      opacityTo: 0,
+      stops: [0, 100],
+    },
+  },
+};
+
+var chart_client = new ApexCharts(
+  document.querySelector("#Yearly-Chart"),
+  options_client
+);
+chart_client.render();
