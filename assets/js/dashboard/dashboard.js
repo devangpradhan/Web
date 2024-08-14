@@ -1366,3 +1366,11 @@ document.addEventListener('DOMContentLoaded', function() {
       updateChart('weekly'); // Update to show weekly data for 5 weeks
   });
 });
+
+
+// Scheme Report
+
+// const datatable = new simpleDatatables.DataTable("#scheme-report", {
+//   paging: false,
+//   tabIndex: 1,
+// });
