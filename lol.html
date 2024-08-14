@@ -1,82 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chart Toggle Example</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-
 <body>
+    <div class="container mt-4">
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" id="overviewButton1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Monthly
+            </button>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="overviewButton1">
+                <a class="dropdown-item" href="#" data-view="weekly">Weekly</a>
+                <a class="dropdown-item" href="#" data-view="monthly">Monthly</a>
+                <a class="dropdown-item" href="#" data-view="yearly">Yearly</a>
+            </div>
+        </div>
+        <div id="purchase-analysis" class="mt-4"></div>
+    </div>
 
-    <li class="sidebar-list">
-        <i class="fa fa-thumbtack"></i>
-        <a class="sidebar-link sidebar-title" href="#">
-            <svg class="stroke-icon">
-                <use href="/assets/svg/icon-sprite.svg#stroke-form"></use>
-            </svg>
-            <span>Forms</span>
-        </a>
-        <ul class="sidebar-submenu">
-            <li>
-                <a class="submenu-title submenu-wrapper" href="#">
-                    Form Controls
-                    <span class="sub-arrow"><i class="fa fa-angle-right"></i></span>
-                </a>
-                <ul class="nav-sub-childmenu submenu-content">
-                    <li><a href="form-validation.html">Form Validation</a></li>
-                    <li><a href="base-input.html">Base Inputs</a></li>
-                    <li><a href="radio-checkbox-control.html">Checkbox & Radio</a></li>
-                    <li><a href="input-group.html">Input Groups</a></li>
-                    <li><a href="input-mask.html">Input Mask</a></li>
-                    <li><a href="megaoptions.html">Mega Options</a></li>
-                    <!-- Level 4 Menu -->
-                    <li>
-                        <a class="submenu-title submenu-wrapper" href="#">
-                            Advanced Controls
-                            <span class="sub-arrow"><i class="fa fa-angle-right"></i></span>
-                        </a>
-                        <ul class="nav-sub-sub-childmenu submenu-content">
-                            <li><a href="dynamic-forms.html">Dynamic Forms</a></li>
-                            <li><a href="nested-controls.html">Nested Controls</a></li>
-                            <li><a href="custom-controls.html">Custom Controls</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </li>
+    <script>
+        var chart;
 
+        var options = {
+            weekly: {
+                series: [{
+                    name: 'Distributor X',
+                    data: [30, 40, 35, 50, 60, 70, 55, 60, 65, 70, 75, 80]  // Data for each week
+                }, {
+                    name: 'Distributor Y',
+                    data: [15, 25, 20, 10, 15, 30, 20, 35, 30, 45, 40, 50]  // Data for each week
+                }, {
+                    name: 'Distributor Z',
+                    data: [20, 25, 15, 20, 25, 30, 25, 30, 35, 30, 25, 40]  // Data for each week
+                }, {
+                    name: 'Distributor W',
+                    data: [10, 20, 15, 25, 20, 25, 30, 35, 40, 45, 50, 55]  // Data for each week
+                }],
+                chart: {
+                    type: 'bar',
+                    height: 350,
+                    stacked: true,
+                    toolbar: {
+                        show: true
+                    },
+                    zoom: {
+                        enabled: true
+                    }
+                },
+                xaxis: {
+                    type: 'category',
+                    categories: [
+                        'Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6',
+                        'Week 7', 'Week 8', 'Week 9', 'Week 10', 'Week 11', 'Week 12'
+                    ],
+                },
+                legend: {
+                    position: 'right',
+                    offsetY: 40
+                },
+                fill: {
+                    opacity: 1
+                }
+            },
+            monthly: {
+                series: [{
+                    name: 'Distributor X',
+                    data: [44, 55, 41, 67, 22, 43, 50, 60, 70, 80, 90, 100]  // Data for each month
+                }, {
+                    name: 'Distributor Y',
+                    data: [13, 23, 20, 8, 13, 27, 30, 40, 35, 45, 50, 55]  // Data for each month
+                }, {
+                    name: 'Distributor Z',
+                    data: [11, 17, 15, 15, 21, 14, 30, 25, 20, 30, 35, 40]  // Data for each month
+                }, {
+                    name: 'Distributor W',
+                    data: [21, 7, 25, 13, 22, 8, 15, 20, 25, 30, 35, 40]  // Data for each month
+                }],
+                chart: {
+                    type: 'bar',
+                    height: 350,
+                    stacked: true,
+                    toolbar: {
+                        show: true
+                    },
+                    zoom: {
+                        enabled: true
+                    }
+                },
+                xaxis: {
+                    type: 'category',
+                    categories: [
+                        'January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'
+                    ],
+                },
+                legend: {
+                    position: 'right',
+                    offsetY: 40
+                },
+                fill: {
+                    opacity: 1
+                }
+            },
+            yearly: {
+                series: [{
+                    name: 'Distributor X',
+                    data: [500, 600, 700, 800]  // Data for each year
+                }, {
+                    name: 'Distributor Y',
+                    data: [200, 250, 300, 350]  // Data for each year
+                }, {
+                    name: 'Distributor Z',
+                    data: [150, 200, 250, 300]  // Data for each year
+                }, {
+                    name: 'Distributor W',
+                    data: [100, 150, 200, 250]  // Data for each year
+                }],
+                chart: {
+                    type: 'bar',
+                    height: 350,
+                    stacked: true,
+                    toolbar: {
+                        show: true
+                    },
+                    zoom: {
+                        enabled: true
+                    }
+                },
+                xaxis: {
+                    type: 'category',
+                    categories: ['2021', '2022', '2023', '2024'],
+                },
+                legend: {
+                    position: 'right',
+                    offsetY: 40
+                },
+                fill: {
+                    opacity: 1
+                }
+            }
+        };
 
-    <style>
-        /* Level 4 Menu Styles */
-        .nav-sub-sub-childmenu {
-            display: none;
-            margin-left: 20px;
-            /* Adjust as needed */
+        function updateChart(view) {
+            if (chart) {
+                chart.destroy();
+            }
+            chart = new ApexCharts(document.querySelector("#purchase-analysis"), options[view]);
+            chart.render();
         }
 
-        .nav-sub-childmenu .submenu-title:hover+.nav-sub-sub-childmenu {
-            display: block;
-        }
+        // Initialize with monthly view
+        document.addEventListener('DOMContentLoaded', function() {
+            updateChart('monthly');  // Set default view to monthly
 
-        .nav-sub-sub-childmenu li {
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-sub-sub-childmenu li a {
-            display: block;
-            padding: 10px;
-            text-decoration: none;
-            color: var(--text-color);
-        }
-
-        .nav-sub-sub-childmenu li a:hover {
-            background-color: var(--hover-background-color);
-        }
-    </style>
-
+            // Handle dropdown selection
+            document.querySelectorAll('.dropdown-item').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevent default anchor behavior
+                    var selectedView = this.getAttribute('data-view');
+                    updateChart(selectedView);
+                    // Update button text
+                    document.getElementById('overviewButton1').textContent = this.textContent;
+                });
+            });
+        });
+    </script>
 </body>
-
 </html>
