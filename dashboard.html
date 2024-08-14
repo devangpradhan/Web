@@ -897,133 +897,7 @@
       <div class="page-body">
         <!-- Container-fluid starts-->
         <div class="container-fluid dashboard2">
-          <div class="row" style="display: none;">
-            <div class="col-xl-12">
-              <div class="card title-line sales-details">
-                <!-- Sales Overview -->
-                <div class="card-header card-no-border sales-bg">
-                  <div class="header-top">
-                    <div>
-                      <h2>Sales Overview </h2>
-                    </div>
-                    <div class="card-header-right-icon">
-                      <div class="dropdown icon-dropdown">
-                        <button class="btn dropdown-toggle" id="daily-task" type="button" data-bs-toggle="dropdown"
-                          aria-expanded="false">
-                          <svg>
-                            <use href="/assets/svg/icon-sprite.svg#more-horizontal"></use>
-                          </svg>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="daily-task"><a
-                            class="dropdown-item" href="#">Today</a><a class="dropdown-item" href="#">Tomorrow</a><a
-                            class="dropdown-item" href="#">Yesterday</a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Card -->
-                <div class="card-body pt-0 custom-scrollbar">
-                  <div class="row row-cols-4 row-cols-xl-iii row-cols-md-iii">
-                    <!-- Total Sales -->
-                    <div class="col">
-                      <div class="sales-overview widget-1">
-                        <div class="common-box">
-                          <div class="rounded-circle2 warning">
-                            <div class="sales-icon">
-                              <svg>
-                                <use href="/assets/svg/icon-sprite.svg#sales"></use>
-                              </svg>
-                            </div>
-                          </div>
-                          <div>
-                            <h3 class="f-w-600">24k USD</h3>
-                            <div class="sale-content">
-                              <span class="f-w-500 f-light f-12">Total Sales</span>
-                              <div class="d-flex align-items-center gap-1"><i class="stroke-warning"
-                                  data-feather="trending-up"></i><span class="txt-warning f-w-600 f-12">+34%</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Customer -->
-                    <div class="col">
-                      <div class="sales-overview widget-1">
-                        <div class="common-box">
-                          <div class="rounded-circle2 success">
-                            <div class="sales-icon">
-                              <svg>
-                                <use href="/assets/svg/icon-sprite.svg#customer"></use>
-                              </svg>
-                            </div>
-                          </div>
-                          <div>
-                            <h3 class="f-w-600">9.453k </h3>
-                            <div class="sale-content">
-                              <span class="f-w-500 f-light f-12">Customer</span>
-                              <div class="d-flex align-items-center gap-1"><i class="stroke-success"
-                                  data-feather="trending-up"></i><span class="txt-success f-w-600 f-12">+27% </span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Orders -->
-                    <div class="col">
-                      <div class="sales-overview widget-1">
-                        <div class="common-box">
-                          <div class="rounded-circle2 primary">
-                            <div class="sales-icon">
-                              <svg class="fill-primary">
-                                <use href="/assets/svg/icon-sprite.svg#orders"></use>
-                              </svg>
-                            </div>
-                          </div>
-                          <div>
-                            <h3 class="f-w-600">1.786k </h3>
-                            <div class="sale-content">
-                              <span class="f-w-500 f-light f-12">Orders</span>
-                              <div class="d-flex align-items-center gap-1"><i class="stroke-primary"
-                                  data-feather="trending-up"></i><span class="txt-primary f-w-600 f-12">+45%</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Transaction -->
-                    <div class="col sales-transaction">
-                      <div class="sales-overview widget-1">
-                        <div class="common-box">
-                          <div class="rounded-circle2 secondary">
-                            <div class="sales-icon">
-                              <svg>
-                                <use href="/assets/svg/icon-sprite.svg#transaction"></use>
-                              </svg>
-                            </div>
-                          </div>
-                          <div>
-                            <h3 class="f-w-600">24k USD</h3>
-                            <div class="sale-content">
-                              <span class="f-w-500 f-light f-12">Transaction</span>
-                              <div class="d-flex align-items-center gap-1"><i class="stroke-secondary reverse-icon"
-                                  data-feather="trending-up"></i><span class="txt-secondary f-w-600 f-12">+27%</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- End Section -->
-                  </div>
-                </div>
-                <!-- Card -->
-              </div>
-            </div>
-          </div>
-          <!-- Sales Overview -->
+          <!-- Sales Parts -->
           <div class="col-md-12">
             <div class="row">
               <!-- Todays Sales -->
@@ -1048,11 +922,6 @@
                       </div>
                     </div>
                   </div>
-                  <!-- <div class="card-body p-0">
-                    <div class="client-chart-container tooltip-small">
-                      <div id="Daily-Chart"> </div>
-                    </div>
-                  </div> -->
                 </div>
               </div>
               <!-- Weekly Sales -->
@@ -1172,7 +1041,27 @@
               </div>
             </div>
           </div>
-          <!-- Sales Chart -->
+          <!-- Purchase anaylsis -->
+          <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-6 box-col-6">
+            <div class="card height-equal title-line">
+              <div class="card-header card-no-border">
+                <div class="header-top">
+                  <h2>Purchase Analysis</h2>
+                  <div class="card-header-right-icon square-legend">
+                    <div class="dropdown">
+                      <button class="btn dropdown-toggle" id="overviewButton1" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">Yearly</button>
+                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="overviewButton1"><a
+                          class="dropdown-item" href="#">Monthly</a>
+                        <a class="dropdown-item" href="#">Weekly</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="purchase-analysis"></div>
+            </div>
+          </div>
           <!-- Dash 2 -->
           <div class="col-xl-12 col-xl-40">
             <div class="row">
@@ -1220,13 +1109,13 @@
                     </div>
                   </div>
                 </div>
+                <!-- Customer Report -->
                 <div class="card height-equal title-line">
                   <div class="card-header card-no-border">
                     <div class="header-top">
                       <h2>Customer Report</h2>
                       <div class="card-header-right-icon customer-header">
                       </div>
-
                       <div class="dropdown">
                         <button class="btn dropdown-toggle" id="overviewButton1" type="button" data-bs-toggle="dropdown"
                           aria-expanded="false">Yearly</button>
@@ -1294,7 +1183,7 @@
                 </div>
               </div>
               <!-- Donut Chart -->
-              <div class="col-3 col-xl-50">
+              <div class="col-xl-3">
                 <div class="card visitor-customer title-line">
                   <div class="card-header card-no-border">
                     <div class="header-top">
@@ -1527,7 +1416,8 @@
                           </ul>
                         </div>
                         <div class="fullrepobtn">
-                          <button class="btn b-ln-height btn-outline-primary" id="fullreport" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Full Report"
+                          <button class="btn b-ln-height btn-outline-primary" id="fullreport" type="button"
+                            data-bs-toggle="tooltip" data-bs-placement="top" title="Full Report"
                             aria-expanded="false"><a><i class="fa-solid fa-arrow-up-right-from-square"></i></a></button>
                         </div>
                       </div>
@@ -1672,8 +1562,8 @@
                           <button class="btn dropdown-toggle" id="orderButtons" type="button" data-bs-toggle="dropdown"
                             aria-expanded="false">Generate Report</button>
                           <div class="dropdown-menu dropdown-menu-start" aria-labelledby="orderButtons"><a
-                              class="dropdown-item" href="#">Yearly</a><a class="dropdown-item"
-                              href="#">Monthly</a><a class="dropdown-item" href="#">Weekly</a></div>
+                              class="dropdown-item" href="#">Yearly</a><a class="dropdown-item" href="#">Monthly</a><a
+                              class="dropdown-item" href="#">Weekly</a></div>
                         </div>
                       </div>
                     </div>

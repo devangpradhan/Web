@@ -2299,17 +2299,17 @@ chart7.render();
 // pie chart
 var options8 = {
   chart: {
-    width: 380,
+    width: 350,
     type: "pie",
   },
   labels: ["Team A", "Team B", "Team C", "Team D", "Team E"],
   series: [44, 55, 13, 43, 22],
   responsive: [
     {
-      breakpoint: 480,
+      breakpoint: 450,
       options: {
         chart: {
-          width: 200,
+          width: 150,
         },
         legend: {
           show: false,
@@ -2333,7 +2333,7 @@ chart8.render();
 // donut chart
 var options9 = {
   chart: {
-    width: 380,
+    width: 350,
     type: "donut",
   },
   series: [44, 55, 41, 17, 15],
