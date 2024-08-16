@@ -1367,10 +1367,3 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-
-// Scheme Report
-
-// const datatable = new simpleDatatables.DataTable("#scheme-report", {
-//   paging: false,
-//   tabIndex: 1,
-// });
