@@ -933,7 +933,7 @@ var chart_client = new ApexCharts(
 );
 chart_client.render();
 
-// sales chart
+// -------------------------- Monthly Sales chart
 var options_client = {
   series: [
     {
@@ -1016,7 +1016,7 @@ var chart_client = new ApexCharts(
 );
 chart_client.render();
 
-// Yearly chart
+// -------------------------- Yearly chart --------------------------
 var options_client = {
   series: [
     {
@@ -1099,97 +1099,68 @@ var chart_client = new ApexCharts(
 );
 chart_client.render();
 
-// Sales Chart
+// -------------------------- Purchase Report --------------------------
 
-document.addEventListener("DOMContentLoaded", function () {
-  var options = {
-    series: [
-      {
-        name: "Yearly",
-        data: [
-          { x: "2021", y: 1000 },
-          { x: "2022", y: 1500 },
-          { x: "2023", y: 1000 },
-          { x: "2024", y: 1500 },
-          // Add more yearly data here
-        ],
-      },
-      {
-        name: "Monthly",
-        data: [
-          { x: "Jan", y: 100 },
-          { x: "Feb", y: 150 },
-          { x: "Mar", y: 100 },
-          { x: "Apr", y: 150 },
-          { x: "May", y: 100 },
-          { x: "Jun", y: 150 },
-          { x: "Jul", y: 100 },
-          { x: "Aug", y: 150 },
-          { x: "Sep", y: 100 },
-          { x: "Oct", y: 150 },
-          { x: "Nov", y: 100 },
-          { x: "Dec", y: 150 },
+var chartOptions = {
+  series: [{
+    name: "Desktops",
+    data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+  }],
+  chart: {
+    height: 350,
+    type: 'line',
+    zoom: {
+      enabled: false
+    },
+    toolbar: {
+      show: false // Hides the entire toolbar including the download button
+    }
+  },
+  dataLabels: {
+    enabled: false
+  },
+  stroke: {
+    curve: 'smooth'
+  },
+  grid: {
+    row: {
+      colors: ['#f3f3f3', 'transparent'],
+      opacity: 0.5
+    }
+  },
+  xaxis: {
+    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+  }
+};
 
-          // Add more monthly data here
-        ],
-      },
-      {
-        name: "Weekly",
-        data: [
-          { x: "Week 1", y: 20 },
-          { x: "Week 2", y: 30 },
-          { x: "Week 3", y: 20 },
-          { x: "Week 4", y: 30 },
-          // Add more weekly data here
-        ],
-      },
-    ],
-    chart: {
-      height: 350,
-      type: "line",
-      stacked: false,
-      toolbar: {
-        show: true,
-        tools: {
-          download: false,
-          zoomin: true,
-          zoomout: true,
-          pan: true,
-          reset: true,
-        },
-      },
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    stroke: {
-      curve: "smooth",
-    },
-    xaxis: {
-      categories: ["Yearly", "Monthly", "Weekly"],
-      title: {
-        text: "Time Period",
-      },
-    },
-    yaxis: {
-      title: {
-        text: "Sales Amount",
-      },
-    },
-    tooltip: {
-      shared: true,
-      intersect: false,
-    },
-    legend: {
-      position: "top",
-    },
-  };
+var chart = new ApexCharts(document.querySelector("#purchase-report"), chartOptions);
+chart.render();
 
-  var chart = new ApexCharts(document.querySelector("#Sales-Chart"), options);
-  chart.render();
+function updateChart(view) {
+  let newOptions = {...chartOptions};
+
+  if (view === 'monthly') {
+    newOptions.xaxis.categories = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'];
+    newOptions.series[0].data = [10, 41, 35, 51, 49, 62, 69, 91, 148];
+  } else if (view === 'weekly') {
+    newOptions.xaxis.categories = ['Week 1', 'Week 2', 'Week 3', 'Week 4'];
+    newOptions.series[0].data = [20, 30, 40, 50];
+  } else if (view === 'yearly') {
+    newOptions.xaxis.categories = ['2021', '2022', '2023', '2024'];
+    newOptions.series[0].data = [150, 200, 180, 220];
+  }
+
+  chart.updateOptions(newOptions);
+}
+
+// Handle dropdown change event
+document.getElementById('viewSelector').addEventListener('change', function(event) {
+  updateChart(event.target.value);
 });
 
-// Purchase Analysis
+
+
+// -------------------------- Purchase Analysis --------------------------
 
 document.addEventListener('DOMContentLoaded', function() {
   var chart;

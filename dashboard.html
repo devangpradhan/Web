@@ -1503,7 +1503,15 @@
                           <div class="user-content">
                             <div class="table-responsive">
                               <!-- Tab Content Start -->
-                              <div id="Sales-Chart" class="overflow-hidden"></div>
+                              <div class="dropdown d-inline-flex">
+                                <button class="btn dropdown-toggle" id="purchase-selector" type="button"
+                                  data-bs-toggle="dropdown" aria-expanded="false">Generate Report</button>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="purchase-selector">
+                                  <a class="dropdown-item" value="yearly" href="#">Yearly</a>
+                                  <a class="dropdown-item" value="monthly" href="#">Monthly</a>
+                                  <a class="dropdown-item" value="weekly" href="#">Weekly</a></div>
+                              </div>
+                              <div id="purchase-report" class="overflow-hidden"></div>
                               <!-- Tab Content End -->
                             </div>
                           </div>
@@ -1604,70 +1612,80 @@
                                       <td> <a class="f-w-500" href="#!">#0918765</a></td>
                                       <td>
                                         <div class="recent-profile"><img class="img-30 rounded-circle img-fluid"
-                                            src="/assets/images/dashboard/user/1.jpg" alt="user"><a href="user-profile.html">
+                                            src="/assets/images/dashboard/user/1.jpg" alt="user"><a
+                                            href="user-profile.html">
                                             <span class="f-light f-w-500">Alex Smith</span></a></div>
                                       </td>
                                       <td> <span class="f-light">Jacket</span></td>
                                       <td> <span class="txt-success f-w-500">$109.00 </span></td>
                                       <td> <span class="f-light">Shmetic Fashion</span></td>
                                       <td><span class="badge badge-light-primary">In Progress </span></td>
-                                      <td><span class="f-light f-w-600">4.9 <span class="f-12 f-w-400">(34 votes)</span></span>
+                                      <td><span class="f-light f-w-600">4.9 <span class="f-12 f-w-400">(34
+                                            votes)</span></span>
                                       </td>
                                     </tr>
                                     <tr>
                                       <td> <a class="f-w-500" href="#!">#109346</a></td>
                                       <td>
                                         <div class="recent-profile"><img class="img-30 rounded-circle img-fluid"
-                                            src="/assets/images/dashboard-3/user/4.png" alt="user"><a href="user-profile.html"><span
-                                              class="f-light f-w-500">Jansh Brown</span></a></div>
+                                            src="/assets/images/dashboard-3/user/4.png" alt="user"><a
+                                            href="user-profile.html"><span class="f-light f-w-500">Jansh
+                                              Brown</span></a></div>
                                       </td>
                                       <td> <span class="f-light">Clothes</span></td>
                                       <td> <span class="txt-success f-w-500">$178.00 </span></td>
                                       <td> <span class="f-light">iTech Factory</span></td>
                                       <td><span class="badge badge-light-warning">Pending</span></td>
-                                      <td><span class="f-light f-w-600">5.0 <span class="f-12 f-w-400">(90 votes)</span></span>
+                                      <td><span class="f-light f-w-600">5.0 <span class="f-12 f-w-400">(90
+                                            votes)</span></span>
                                       </td>
                                     </tr>
                                     <tr>
                                       <td> <a class="f-w-500" href="#!">#209813</a></td>
                                       <td>
                                         <div class="recent-profile"><img class="img-30 rounded-circle img-fluid"
-                                            src="/assets/images/dashboard-3/user/7.png" alt="user"><a href="user-profile.html"><span
-                                              class="f-light f-w-500">Prezy Mark</span></a></div>
+                                            src="/assets/images/dashboard-3/user/7.png" alt="user"><a
+                                            href="user-profile.html"><span class="f-light f-w-500">Prezy Mark</span></a>
+                                        </div>
                                       </td>
                                       <td> <span class="f-light">Wallets & Bag</span></td>
                                       <td> <span class="txt-success f-w-500">$210.00 </span></td>
                                       <td> <span class="f-light">Micro Design</span></td>
                                       <td><span class="badge badge-light-success">Paid</span></td>
-                                      <td><span class="f-light f-w-600">4.5 <span class="f-12 f-w-400">(43 votes)</span></span>
+                                      <td><span class="f-light f-w-600">4.5 <span class="f-12 f-w-400">(43
+                                            votes)</span></span>
                                       </td>
                                     </tr>
                                     <tr>
                                       <td> <a class="f-w-500" href="#!">#306754</a></td>
                                       <td>
                                         <div class="recent-profile"><img class="img-30 rounded-circle img-fluid"
-                                            src="/assets/images/dashboard/user/2.jpg" alt="user"><a href="user-profile.html"><span
-                                              class="f-light f-w-500">Vihan Hudda</span></a></div>
+                                            src="/assets/images/dashboard/user/2.jpg" alt="user"><a
+                                            href="user-profile.html"><span class="f-light f-w-500">Vihan
+                                              Hudda</span></a></div>
                                       </td>
                                       <td> <span class="f-light">Furniture</span></td>
                                       <td> <span class="txt-success f-w-500">$330.00</span></td>
                                       <td> <span class="f-light">Nesta Technology</span></td>
                                       <td><span class="badge badge-light-warning">Pending</span></td>
-                                      <td><span class="f-light f-w-600">4.6<span class="f-12 f-w-400">(30 votes)</span></span>
+                                      <td><span class="f-light f-w-600">4.6<span class="f-12 f-w-400">(30
+                                            votes)</span></span>
                                       </td>
                                     </tr>
                                     <tr>
                                       <td> <a class="f-w-500" href="#!">#107654</a></td>
                                       <td>
                                         <div class="recent-profile"><img class="img-30 rounded-circle img-fluid"
-                                            src="/assets/images/avtar/7.jpg" alt="user"><a href="user-profile.html"><span
-                                              class="f-light f-w-500">Biraj Shah</span></a></div>
+                                            src="/assets/images/avtar/7.jpg" alt="user"><a
+                                            href="user-profile.html"><span class="f-light f-w-500">Biraj Shah</span></a>
+                                        </div>
                                       </td>
                                       <td> <span class="f-light">Kitchen Stole</span></td>
                                       <td> <span class="txt-success f-w-500">$187.00</span></td>
                                       <td> <span class="f-light">Syntcy solutions</span></td>
                                       <td><span class="badge badge-light-primary">In Progress</span></td>
-                                      <td><span class="f-light f-w-600">4.3<span class="f-12 f-w-400">(87 votes)</span></span>
+                                      <td><span class="f-light f-w-600">4.3<span class="f-12 f-w-400">(87
+                                            votes)</span></span>
                                       </td>
                                     </tr>
                                   </tbody>
