@@ -1555,12 +1555,13 @@
                 </div>
               </div>
               <!-- Sales Report -->
-              <div class="col-xl-6 col-xl-100 order-xl-ii col-md-8">
-                <div class="card height-equal title-line">
+              <div class="col-xxl-6">
+                <div class="card title-line">
                   <div class="card-header card-no-border">
                     <div class="header-top">
-                      <h2>Sales Reports</h2>
-                      <div class="card-header-right-icon recent-order-header">
+                      <h2>Sales Report<span class="f-12 f-w-500 f-light d-block">Total 4,998 Items in stock</span>
+                      </h2>
+                      <div class="card-header-right-icon stock-report">
                         <div class="dropdown">
                           <button class="btn dropdown-toggle" id="orderButtons" type="button" data-bs-toggle="dropdown"
                             aria-expanded="false">Generate Report</button>
@@ -1568,95 +1569,170 @@
                               class="dropdown-item" href="#">Yearly</a><a class="dropdown-item" href="#">Monthly</a><a
                               class="dropdown-item" href="#">Weekly</a></div>
                         </div>
+                        <div class="fullrepobtn">
+                          <button class="btn b-ln-height btn-outline-primary" id="fullreport" type="button"
+                            data-bs-toggle="tooltip" data-bs-placement="top" title="Full Report"
+                            aria-expanded="false"><a><i class="fa-solid fa-arrow-up-right-from-square"></i></a></button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div class="card-body project-datatable p-0 order-tables custom-scrollbar">
-                    <table class="table" id="order-status">
-                      <thead>
-                        <tr>
-                          <th> <span class="f-light f-w-600">Order ID</span></th>
-                          <th> <span class="f-light f-w-600">Customer</span></th>
-                          <th> <span class="f-light f-w-600">Product</span></th>
-                          <th> <span class="f-light f-w-600">Amount</span></th>
-                          <th> <span class="f-light f-w-600">Vendor</span></th>
-                          <th> <span class="f-light f-w-600">Status</span></th>
-                          <th> <span class="f-light f-w-600">Rating</span></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td> <a class="f-w-500" href="#!">#0918765</a></td>
-                          <td>
-                            <div class="recent-profile"><img class="img-30 rounded-circle img-fluid"
-                                src="/assets/images/dashboard/user/1.jpg" alt="user"><a href="user-profile.html">
-                                <span class="f-light f-w-500">Alex Smith</span></a></div>
-                          </td>
-                          <td> <span class="f-light">Jacket</span></td>
-                          <td> <span class="txt-success f-w-500">$109.00 </span></td>
-                          <td> <span class="f-light">Shmetic Fashion</span></td>
-                          <td><span class="badge badge-light-primary">In Progress </span></td>
-                          <td><span class="f-light f-w-600">4.9 <span class="f-12 f-w-400">(34 votes)</span></span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td> <a class="f-w-500" href="#!">#109346</a></td>
-                          <td>
-                            <div class="recent-profile"><img class="img-30 rounded-circle img-fluid"
-                                src="/assets/images/dashboard-3/user/4.png" alt="user"><a href="user-profile.html"><span
-                                  class="f-light f-w-500">Jansh Brown</span></a></div>
-                          </td>
-                          <td> <span class="f-light">Clothes</span></td>
-                          <td> <span class="txt-success f-w-500">$178.00 </span></td>
-                          <td> <span class="f-light">iTech Factory</span></td>
-                          <td><span class="badge badge-light-warning">Pending</span></td>
-                          <td><span class="f-light f-w-600">5.0 <span class="f-12 f-w-400">(90 votes)</span></span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td> <a class="f-w-500" href="#!">#209813</a></td>
-                          <td>
-                            <div class="recent-profile"><img class="img-30 rounded-circle img-fluid"
-                                src="/assets/images/dashboard-3/user/7.png" alt="user"><a href="user-profile.html"><span
-                                  class="f-light f-w-500">Prezy Mark</span></a></div>
-                          </td>
-                          <td> <span class="f-light">Wallets & Bag</span></td>
-                          <td> <span class="txt-success f-w-500">$210.00 </span></td>
-                          <td> <span class="f-light">Micro Design</span></td>
-                          <td><span class="badge badge-light-success">Paid</span></td>
-                          <td><span class="f-light f-w-600">4.5 <span class="f-12 f-w-400">(43 votes)</span></span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td> <a class="f-w-500" href="#!">#306754</a></td>
-                          <td>
-                            <div class="recent-profile"><img class="img-30 rounded-circle img-fluid"
-                                src="/assets/images/dashboard/user/2.jpg" alt="user"><a href="user-profile.html"><span
-                                  class="f-light f-w-500">Vihan Hudda</span></a></div>
-                          </td>
-                          <td> <span class="f-light">Furniture</span></td>
-                          <td> <span class="txt-success f-w-500">$330.00</span></td>
-                          <td> <span class="f-light">Nesta Technology</span></td>
-                          <td><span class="badge badge-light-warning">Pending</span></td>
-                          <td><span class="f-light f-w-600">4.6<span class="f-12 f-w-400">(30 votes)</span></span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td> <a class="f-w-500" href="#!">#107654</a></td>
-                          <td>
-                            <div class="recent-profile"><img class="img-30 rounded-circle img-fluid"
-                                src="/assets/images/avtar/7.jpg" alt="user"><a href="user-profile.html"><span
-                                  class="f-light f-w-500">Biraj Shah</span></a></div>
-                          </td>
-                          <td> <span class="f-light">Kitchen Stole</span></td>
-                          <td> <span class="txt-success f-w-500">$187.00</span></td>
-                          <td> <span class="f-light">Syntcy solutions</span></td>
-                          <td><span class="badge badge-light-primary">In Progress</span></td>
-                          <td><span class="f-light f-w-600">4.3<span class="f-12 f-w-400">(87 votes)</span></span>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                  <div class="card-body">
+                    <!-- Grid Start -->
+                    <div class="tab-content" id="topline-tabContent">
+                      <div class="tab-pane fade show active" id="topline-top-user" role="tabpanel"
+                        aria-labelledby="topline-top-user-tab">
+                        <div class="card-body px-0 pb-0 pt-3">
+                          <div class="user-content">
+                            <div class="table-responsive">
+                              <!-- Tab Content Start -->
+                              <div class="card-body project-datatable p-0 stock-table custom-scrollbar">
+                                <table class="table" id="order-status">
+                                  <thead>
+                                    <tr>
+                                      <th> <span class="f-light f-w-600">Order ID</span></th>
+                                      <th> <span class="f-light f-w-600">Customer</span></th>
+                                      <th> <span class="f-light f-w-600">Product</span></th>
+                                      <th> <span class="f-light f-w-600">Amount</span></th>
+                                      <th> <span class="f-light f-w-600">Vendor</span></th>
+                                      <th> <span class="f-light f-w-600">Status</span></th>
+                                      <th> <span class="f-light f-w-600">Rating</span></th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td> <a class="f-w-500" href="#!">#0918765</a></td>
+                                      <td>
+                                        <div class="recent-profile"><img class="img-30 rounded-circle img-fluid"
+                                            src="/assets/images/dashboard/user/1.jpg" alt="user"><a href="user-profile.html">
+                                            <span class="f-light f-w-500">Alex Smith</span></a></div>
+                                      </td>
+                                      <td> <span class="f-light">Jacket</span></td>
+                                      <td> <span class="txt-success f-w-500">$109.00 </span></td>
+                                      <td> <span class="f-light">Shmetic Fashion</span></td>
+                                      <td><span class="badge badge-light-primary">In Progress </span></td>
+                                      <td><span class="f-light f-w-600">4.9 <span class="f-12 f-w-400">(34 votes)</span></span>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td> <a class="f-w-500" href="#!">#109346</a></td>
+                                      <td>
+                                        <div class="recent-profile"><img class="img-30 rounded-circle img-fluid"
+                                            src="/assets/images/dashboard-3/user/4.png" alt="user"><a href="user-profile.html"><span
+                                              class="f-light f-w-500">Jansh Brown</span></a></div>
+                                      </td>
+                                      <td> <span class="f-light">Clothes</span></td>
+                                      <td> <span class="txt-success f-w-500">$178.00 </span></td>
+                                      <td> <span class="f-light">iTech Factory</span></td>
+                                      <td><span class="badge badge-light-warning">Pending</span></td>
+                                      <td><span class="f-light f-w-600">5.0 <span class="f-12 f-w-400">(90 votes)</span></span>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td> <a class="f-w-500" href="#!">#209813</a></td>
+                                      <td>
+                                        <div class="recent-profile"><img class="img-30 rounded-circle img-fluid"
+                                            src="/assets/images/dashboard-3/user/7.png" alt="user"><a href="user-profile.html"><span
+                                              class="f-light f-w-500">Prezy Mark</span></a></div>
+                                      </td>
+                                      <td> <span class="f-light">Wallets & Bag</span></td>
+                                      <td> <span class="txt-success f-w-500">$210.00 </span></td>
+                                      <td> <span class="f-light">Micro Design</span></td>
+                                      <td><span class="badge badge-light-success">Paid</span></td>
+                                      <td><span class="f-light f-w-600">4.5 <span class="f-12 f-w-400">(43 votes)</span></span>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td> <a class="f-w-500" href="#!">#306754</a></td>
+                                      <td>
+                                        <div class="recent-profile"><img class="img-30 rounded-circle img-fluid"
+                                            src="/assets/images/dashboard/user/2.jpg" alt="user"><a href="user-profile.html"><span
+                                              class="f-light f-w-500">Vihan Hudda</span></a></div>
+                                      </td>
+                                      <td> <span class="f-light">Furniture</span></td>
+                                      <td> <span class="txt-success f-w-500">$330.00</span></td>
+                                      <td> <span class="f-light">Nesta Technology</span></td>
+                                      <td><span class="badge badge-light-warning">Pending</span></td>
+                                      <td><span class="f-light f-w-600">4.6<span class="f-12 f-w-400">(30 votes)</span></span>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td> <a class="f-w-500" href="#!">#107654</a></td>
+                                      <td>
+                                        <div class="recent-profile"><img class="img-30 rounded-circle img-fluid"
+                                            src="/assets/images/avtar/7.jpg" alt="user"><a href="user-profile.html"><span
+                                              class="f-light f-w-500">Biraj Shah</span></a></div>
+                                      </td>
+                                      <td> <span class="f-light">Kitchen Stole</span></td>
+                                      <td> <span class="txt-success f-w-500">$187.00</span></td>
+                                      <td> <span class="f-light">Syntcy solutions</span></td>
+                                      <td><span class="badge badge-light-primary">In Progress</span></td>
+                                      <td><span class="f-light f-w-600">4.3<span class="f-12 f-w-400">(87 votes)</span></span>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <!-- Tab Content End -->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Graph Start -->
+                      <div class="tab-pane fade" id="topline-top-description" role="tabpanel"
+                        aria-labelledby="topline-top-description-tab">
+                        <div class="card-body px-0 pb-0">
+                          <div class="user-content">
+                            <div class="table-responsive">
+                              <!-- Tab Content Start -->
+                              <div id="Sales-Chart" class="overflow-hidden"></div>
+                              <!-- Tab Content End -->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="topline-top-review" role="tabpanel"
+                        aria-labelledby="topline-top-review-tab">
+                        <div class="card-body px-0 pb-0 pt-3">
+                          <div class="user-header pb-2">
+                            <h6 class="fw-bold">Review:</h6>
+                          </div>
+                          <div class="user-content">
+                            <div class="table-responsive">
+                              <table class="table mb-0">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Country</th>
+                                    <th scope="col">Rating </th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">1</th>
+                                    <td>Neha</td>
+                                    <td>India </td>
+                                    <td> <i class="ico-color icofont icofont-star"></i><i
+                                        class="ico-color icofont icofont-star"></i><i
+                                        class="ico-color icofont icofont-star"></i><i
+                                        class="ico-color icofont icofont-star"></i></td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">2</th>
+                                    <td>Irfan</td>
+                                    <td>India</td>
+                                    <td> <i class="ico-color icofont icofont-star"></i><i
+                                        class="ico-color icofont icofont-star"></i><i
+                                        class="ico-color icofont icofont-star"></i></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
