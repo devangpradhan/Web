@@ -1338,3 +1338,11 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+
+
+$(document).ready(function() {
+  const datatable = new simpleDatatables.DataTable("#scheme-bar", {
+    paging: false,
+    tabIndex: 1,
+  });
+});
