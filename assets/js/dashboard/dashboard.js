@@ -509,6 +509,7 @@ const category_swiper3 = new Swiper(".sales-overview-slider", {
   },
 });
 
+// ------------------------ Sales Overview Chart ------------------------
 // project overview chart
 var options_overview = {
   series: [
@@ -1099,67 +1100,6 @@ var chart_client = new ApexCharts(
 );
 chart_client.render();
 
-// -------------------------- Purchase Report --------------------------
-
-var chartOptions = {
-  series: [{
-    name: "Desktops",
-    data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
-  }],
-  chart: {
-    height: 350,
-    type: 'line',
-    zoom: {
-      enabled: false
-    },
-    toolbar: {
-      show: false // Hides the entire toolbar including the download button
-    }
-  },
-  dataLabels: {
-    enabled: false
-  },
-  stroke: {
-    curve: 'smooth'
-  },
-  grid: {
-    row: {
-      colors: ['#f3f3f3', 'transparent'],
-      opacity: 0.5
-    }
-  },
-  xaxis: {
-    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
-  }
-};
-
-var chart = new ApexCharts(document.querySelector("#purchase-report"), chartOptions);
-chart.render();
-
-function updateChart(view) {
-  let newOptions = {...chartOptions};
-
-  if (view === 'monthly') {
-    newOptions.xaxis.categories = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'];
-    newOptions.series[0].data = [10, 41, 35, 51, 49, 62, 69, 91, 148];
-  } else if (view === 'weekly') {
-    newOptions.xaxis.categories = ['Week 1', 'Week 2', 'Week 3', 'Week 4'];
-    newOptions.series[0].data = [20, 30, 40, 50];
-  } else if (view === 'yearly') {
-    newOptions.xaxis.categories = ['2021', '2022', '2023', '2024'];
-    newOptions.series[0].data = [150, 200, 180, 220];
-  }
-
-  chart.updateOptions(newOptions);
-}
-
-// Handle dropdown change event
-document.getElementById('viewSelector').addEventListener('change', function(event) {
-  updateChart(event.target.value);
-});
-
-
-
 // -------------------------- Purchase Analysis --------------------------
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -1340,9 +1280,61 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-$(document).ready(function() {
-  const datatable = new simpleDatatables.DataTable("#scheme-bar", {
-    paging: false,
-    tabIndex: 1,
-  });
+// -------------------------- Purchase Report --------------------------
+
+var chartOptions = {
+  series: [{
+    name: "Desktops",
+    data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+  }],
+  chart: {
+    height: 350,
+    type: 'line',
+    zoom: {
+      enabled: false
+    },
+    toolbar: {
+      show: false // Hides the entire toolbar including the download button
+    }
+  },
+  dataLabels: {
+    enabled: false
+  },
+  stroke: {
+    curve: 'smooth'
+  },
+  grid: {
+    row: {
+      colors: ['#f3f3f3', 'transparent'],
+      opacity: 0.5
+    }
+  },
+  xaxis: {
+    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+  }
+};
+
+var chart = new ApexCharts(document.querySelector("#purchase-report"), chartOptions);
+chart.render();
+
+function updateChart(view) {
+  let newOptions = {...chartOptions};
+
+  if (view === 'monthly') {
+    newOptions.xaxis.categories = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'];
+    newOptions.series[0].data = [10, 41, 35, 51, 49, 62, 69, 91, 148];
+  } else if (view === 'weekly') {
+    newOptions.xaxis.categories = ['Week 1', 'Week 2', 'Week 3', 'Week 4'];
+    newOptions.series[0].data = [20, 30, 40, 50];
+  } else if (view === 'yearly') {
+    newOptions.xaxis.categories = ['2021', '2022', '2023', '2024'];
+    newOptions.series[0].data = [150, 200, 180, 220];
+  }
+
+  chart.updateOptions(newOptions);
+}
+
+// Handle dropdown change event
+document.getElementById('viewSelector').addEventListener('change', function(event) {
+  updateChart(event.target.value);
 });
