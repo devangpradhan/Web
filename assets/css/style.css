@@ -50835,13 +50835,14 @@ table.table-bordered thead tr th p {
 .page-wrapper.compact-wrapper .page-header .header-logo-wrapper .logo-wrapper {
   display: none;
 }
+
 .page-wrapper.compact-wrapper .page-header::before {
   background: url(../images/other-images/header-bg.svg) var(--white);
   position: absolute;
   content: "";
   width: 100%;
   height: var(--header-height);
-  /* animation: wave 10s -3s linear infinite; */
+  animation: wave 10s -3s linear infinite;
   background-size: cover;
   transform: translate3d(0, 0, 0);
   left: 0;

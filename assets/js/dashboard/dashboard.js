@@ -1148,7 +1148,7 @@ document.addEventListener('DOMContentLoaded', function() {
               height: 350,
               stacked: true,
               toolbar: {
-                  show: true
+                  show: false
               },
               zoom: {
                   enabled: true
@@ -1185,7 +1185,7 @@ document.addEventListener('DOMContentLoaded', function() {
               height: 350,
               stacked: true,
               toolbar: {
-                  show: true
+                  show: false
               },
               zoom: {
                   enabled: true
