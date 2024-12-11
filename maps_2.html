@@ -4,8 +4,6 @@
     <title>Azure Maps with State Selector</title>
     <meta charset="utf-8">
     <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
-    <script src="https://unpkg.com/shpjs@latest/dist/shp.min.js"></script>
-
     <link href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" rel="stylesheet">
     <style>
         #myMap {
@@ -55,6 +53,9 @@
             map.controls.add(new atlas.control.ZoomControl(), {
                 position: 'top-right'
             });
+
+            // Add region data to the map
+            addRegionData();
         });
 
         // Create a data source to hold the polygon for the state
@@ -67,48 +68,46 @@
         });
         map.layers.add(polygonLayer);
 
-        // State coordinates data (for demonstration purposes)
-        var stateCoordinates = {
-            "Maharashtra": [
-                [72.8777, 19.0760],
-                [73.8478, 18.5204],
-                [74.2094, 16.7061],
-                [73.7681, 15.3173],
-                [72.8777, 19.0760]
-            ],
-            "Karnataka": [
-                [77.5946, 12.9716],
-                [75.8064, 15.3173],
-                [74.1240, 15.2993],
-                [74.6197, 16.3700],
-                [77.5946, 12.9716]
-            ],
-            "Gujarat": [
-                [72.8311, 21.1702],
-                [70.8022, 22.2735],
-                [70.7832, 22.2587],
-                [72.8277, 23.0338],
-                [72.8311, 21.1702]
-            ]
-        };
+        // Function to add region data to the map
+        function addRegionData() {
+            // Use the GeoJSON data source to add region data
+            var regionDataSource = new atlas.source.DataSource();
+            map.sources.add(regionDataSource);
+
+            // Load GeoJSON data for Indian states
+            regionDataSource.importDataFromUrl('https://raw.githubusercontent.com/geohacker/india/master/state/india_state.geojson');
+
+            // Add a layer for region boundaries
+            map.layers.add(new atlas.layer.LineLayer(regionDataSource, null, {
+                strokeColor: '#000000',
+                strokeWidth: 1
+            }));
+        }
 
         // Function to highlight the selected state
         function highlightState(state) {
             dataSource.clear(); // Clear any existing polygons
 
-            if (state && stateCoordinates[state]) {
-                var coordinates = stateCoordinates[state];
-                var polygon = new atlas.data.Polygon([coordinates]);
-                dataSource.add(new atlas.data.Feature(polygon));
-
-                // Calculate the bounding box to fit the polygon within the map view
-                var bbox = atlas.data.BoundingBox.fromData(coordinates);
-
-                // Set the map's camera to center and zoom based on the bounding box
-                map.setCamera({
-                    bounds: bbox,
-                    padding: 50 // Optional: Add padding around the polygon
+            if (state) {
+                // Use the GeoJSON data to highlight the selected state
+                var regionDataSource = map.sources.getById('region-data');
+                var features = regionDataSource.getShapes();
+                var selectedFeature = features.find(function(feature) {
+                    return feature.properties.NAME_1 === state;
                 });
+
+                if (selectedFeature) {
+                    dataSource.add(selectedFeature);
+
+                    // Calculate the bounding box to fit the polygon within the map view
+                    var bbox = atlas.data.BoundingBox.fromData(selectedFeature.geometry);
+
+                    // Set the map's camera to center and zoom based on the bounding box
+                    map.setCamera({
+                        bounds: bbox,
+                        padding: 50 // Optional: Add padding around the polygon
+                    });
+                }
             }
         }
 
@@ -117,7 +116,6 @@
             var selectedState = this.value;
             highlightState(selectedState);
         });
-        
     </script>
 </body>
 </html>

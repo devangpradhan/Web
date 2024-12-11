@@ -2491,3 +2491,5 @@ var options11 = {
 var chart11 = new ApexCharts(document.querySelector("#circlechart"), options11);
 
 chart11.render();
+
+
