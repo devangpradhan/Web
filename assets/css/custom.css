@@ -515,10 +515,10 @@ button {
 }
 button.active {
   color: #fff;
-  background: #008FFB;
-  border: 1px solid blue;
-  border-bottom: 2px solid blue;
+  background: #fb6060;
+  border: 1px solid #e77e80;
+  border-bottom: 2px solid #e77e80;
 }
 button:focus {
   outline: 0;
-}
+ }

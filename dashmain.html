@@ -919,27 +919,34 @@
                   <div class="tab-content" id="icon-tabContent">
                     <div class="tab-pane fade show active" id="icon-home" role="tabpanel" aria-labelledby="icon-home-tab">
 
-                        <div class="chart-container">
+                        <div class="container-fluid">
                           <!-- Zoom control buttons -->
                           <div class="controls">
-                              <button id="one_month">1M</button>
-                              <button id="six_months">6M</button>
-                              <button id="one_year">1Y</button>
-                              <button id="ytd">YTD</button>
-                              <button id="all">ALL</button>
+                            <button id="one_month_E">1M</button>
+                            <button id="six_months_E">6M</button>
+                            <button id="one_year_E">1Y</button>
+                            <button id="ytd_E">YTD</button>
+                            <button id="all_E">ALL</button>
                           </div>
-                          
                           <!-- Chart container -->
-                          <div id="chart-timeline"></div>
-                          
-
+                          <div id="chart-ERP"></div>
                           </div>
-                      </div>
-
-                    <div class="tab-pane fade" id="profile-icon" role="tabpanel" aria-labelledby="profile-icon-tabs">
-
                     </div>
 
+                    <div class="tab-pane fade" id="profile-icon" role="tabpanel" aria-labelledby="profile-icon-tabs">
+                      <div class="container-fluid">
+                        <!-- Zoom control buttons -->
+                        <div class="controls_DMS">
+                          <button id="one_month_D">1M</button>
+                          <button id="six_months_D">6M</button>
+                          <button id="one_year_D">1Y</button>
+                          <button id="ytd_D">YTD</button>
+                          <button id="all_D">ALL</button>
+                        </div>
+                        <!-- Chart container -->
+                        <div id="chart-DMS"></div>
+                        </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1975,17 +1982,19 @@
   <script src="/assets/js/touchspin_2/custom_touchspin.js"></script>
   <script src="/assets/js/datatable/simple-datatable.js"></script>
   <script src="/assets/js/timer.js"></script>
-  <script src="/assets/js/dashboard/dashboard.js"></script>
   <!-- Apex Chart-->
   <script src="/assets/js/chart/apex-chart/apex-chart.js"></script>
   <script src="/assets/js/chart/apex-chart/stock-prices.js"></script>
   <script src="/assets/js/chart/apex-chart/chart-custom.js"></script>
   <script src="/assets/js/tooltip-init.js"></script>
-
+  <script src="/assets/js/dashboard/dashboard.js"></script>
+  <script src="/assets/js/dashboard/chartdms.js"></script>
+  <script src="/assets/js/dashboard/charterp.js"></script>
   <!-- Theme js-->
   <script src="/assets/js/script.js"></script>
   <script src="/assets/js/script2.js"></script>
   <!-- <script src="/assets/js/theme-customizer/customizer.js"></script> -->
+
 </body>
 
 </html>

@@ -1358,6 +1358,7 @@ document.getElementById('viewSelector').addEventListener('change', function(even
 }
 
 // Your provided ApexCharts initialization code
+
 var options = {
   series: [{
       data: generateDayWiseTimeSeries(new Date('11 Feb 2017').getTime(), 20, {
