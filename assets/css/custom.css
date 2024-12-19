@@ -522,3 +522,51 @@ button.active {
 button:focus {
   outline: 0;
  }
+
+/* bitwid Button */
+/* styles.css */
+
+
+.custom-radio-btn {
+  border: 2px solid #f51b1e; /* Initial border style */
+  background-color: transparent;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.custom-radio-btn:hover {
+  border-color: #e77e80;
+  background-color: rgba(13, 110, 253, 0.1);
+  cursor: pointer;
+}
+
+input[type="radio"]:checked + .custom-radio-btn {
+  background-color: #fb6060;
+  border-color: #e77e80;
+  color: white;
+}
+
+.main-upgrade .variation-box .selection-box {
+  position: relative;
+  height: 100px;
+  border: 1px dashed var(--theme-default);
+  width: 100%; /* Changed min-width to width: 100% */
+  border-radius: 15px;
+}
+.selected {
+  background-color: #0d6efd; /* Fill color after selection */
+  border: 2px solid #0d6efd; /* Border color after selection */
+}
+
+.first-text {
+  text-align:left;
+  font-size: 12px;
+ }
+  
+.last-text{
+  text-align:right;
+  font-size: 25px;
+  font-weight:700;
+}
+

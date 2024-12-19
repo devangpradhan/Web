@@ -403,3 +403,19 @@
     $(".flip-card-inner").removeClass("flipped");
   });
 })(jQuery);
+
+
+const buttons = document.querySelectorAll('.custom-radio-btn');
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Deselect all buttons
+        buttons.forEach(btn => btn.classList.remove('selected'));
+        
+        // Select the clicked button
+        button.classList.add('selected');
+        
+        // Disable further clicks on selected button
+        button.disabled = true;
+    });
+});
