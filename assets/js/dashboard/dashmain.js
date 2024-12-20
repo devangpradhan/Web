@@ -107,6 +107,7 @@ const chartData = {
 let show6thLegend = true;
 
 // Spline Area Chart
+
 let splineAreaChart = new ApexCharts(document.querySelector("#splineAreaChart"), {
     chart: {
         type: 'area',
@@ -139,8 +140,10 @@ let splineAreaChart = new ApexCharts(document.querySelector("#splineAreaChart"),
     },
     legend: {
         position: 'bottom',
-    }
+    },
+    colors: ['#ff4c57', '#fe5d63', '#ff6e73', '#fe8a8d', '#fe9494'] // Add colors here
 });
+
 
 // Polar Area Chart
 let polarAreaChart = new ApexCharts(document.querySelector("#polarAreaChart"), {
@@ -159,7 +162,9 @@ let polarAreaChart = new ApexCharts(document.querySelector("#polarAreaChart"), {
     }],
     legend: {
         show: true,
-    }
+    },
+    colors: ['#ff4c57', '#fe5d63', '#ff6e73', '#fe8a8d', '#fe9494'] // Add colors here
+
 });
 
 splineAreaChart.render();
