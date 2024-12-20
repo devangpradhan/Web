@@ -1,3 +1,5 @@
+// Piechart
+
 var options = {
   series: [45, 55], // You can adjust the values for ERP and DMS
   labels: ["ERP", "DMS"],
@@ -23,243 +25,210 @@ var options = {
 var chart = new ApexCharts(document.querySelector("#evsd"), options);
 chart.render();
 
-// Temp Chart
 
-var options = {
-    series: [
-    {
-      name: 'New York Temperature',
-      data: [
-        {
-          x: 'Jan',
-          y: [-2, 4]
-        },
-        {
-          x: 'Feb',
-          y: [-1, 6]
-        },
-        {
-          x: 'Mar',
-          y: [3, 10]
-        },
-        {
-          x: 'Apr',
-          y: [8, 16]
-        },
-        {
-          x: 'May',
-          y: [13, 22]
-        },
-        {
-          x: 'Jun',
-          y: [18, 26]
-        },
-        {
-          x: 'Jul',
-          y: [21, 29]
-        },
-        {
-          x: 'Aug',
-          y: [21, 28]
-        },
-        {
-          x: 'Sep',
-          y: [17, 24]
-        },
-        {
-          x: 'Oct',
-          y: [11, 18]
-        },
-        {
-          x: 'Nov',
-          y: [6, 12]
-        },
-        {
-          x: 'Dec',
-          y: [1, 7]
-        }
-      ]
-    }
-  ],
-    chart: {
-    height: 350,
-    type: 'rangeArea'
+//   ERP Chart  ------------------------------------------
+
+const lineChartData = {
+  "monthly": [10, 15, 20, 25, 30],
+  "quarterly": [20, 40, 35, 50, 60],
+  "yearly": [30, 60, 75, 100, 120],
+  "all": [50, 75, 100, 125, 150]
+};
+
+const pieChartData = {
+  "monthly": [30, 70],
+  "quarterly": [40, 60],
+  "yearly": [1500, 1000],
+  "all": [20000, 10000]
+};
+
+
+const categories = ["Jan", "Feb", "Mar", "Apr", "May"];
+
+const lineChartOptions = {
+  chart: { 
+      type: 'area', 
+      height: 350, 
   },
-  stroke: {
-    curve: 'monotoneCubic'
-  },
-//   title: {
-//     text: 'New York Temperature (all year round)'
-//   },
-  markers: {
-    hover: {
-      sizeOffset: 5
-    }
-  },
-  dataLabels: {
-    enabled: false
-  },
-  yaxis: {
-    labels: {
-      formatter: (val) => {
-        return val + '°C'
-      }
-    }
-  }
-  };
+  series: [{ name: 'Data', data: lineChartData["all"] }],
+  xaxis: { categories: categories },
+  colors: ['#fc8286'] // Add the desired color here
+    // title: { text: 'Line Chart' }
+};
 
-  var chart = new ApexCharts(document.querySelector("#distrusales"), options);
-  chart.render();
+const pieChartOptions = {
+  chart: { type: 'pie', height: 350 },
+  series: pieChartData["all"],
+  labels: ['GSD', 'DMS'],
+  colors: ["#f54e4e", "#f96d6d"], // Custom colors for each slice
+  // title: { text: 'Pie Chart' }
+};
+
+const lineChart = new ApexCharts(document.querySelector("#line-chart"), lineChartOptions);
+const pieChart = new ApexCharts(document.querySelector("#pie-chart"), pieChartOptions);
+
+lineChart.render();
+pieChart.render();
+
+function updatePieValues(data) {
+  document.getElementById('gsd-sales').innerHTML = `${data[0]}`;
+  document.getElementById('dms-sales').innerHTML = `${data[1]}`;
+}
+
+updatePieValues(pieChartData["all"]);
+
+document.querySelectorAll('.buttons button').forEach(button => {
+  button.addEventListener('click', () => {
+      const range = button.getAttribute('data-range');
+      document.querySelectorAll('.buttons button').forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      lineChart.updateSeries([{ data: lineChartData[range] || lineChartData["all"] }]);
+      const pieData = pieChartData[range] || pieChartData["all"];
+      pieChart.updateSeries(pieData);
+      updatePieValues(pieData);
+  });
+});
 
 
-//   Treechart
+// DMS Chart ------------------------------------------
 
-const datatree = {
-    id: '1',
-    name: 'Species',
-    options: {
-      fontSize: '25px',
-      fontFamily: 'sans-serif',
-      fontWeight: 600,
-      fontColor: '#a06dcc',
-      borderWidth: 2,
-      borderColor: '#a06dcc',
-      borderColorHover: '#ec327e',
-      nodeBGColor: '#eedfff',
-      nodeBGColorHover: '#d5c3ff',
+const chartData = {
+    series: {
+        distributor: [44, 55, 41, 64, 22, 30],
+        dealer: [53, 32, 33, 52, 13, 40],
+        retailer: [24, 12, 34, 61, 11, 20],
+        self: [15, 18, 27, 35, 20, 10],
+        sister: [12, 9, 21, 8, 30, 15]
     },
-    children: [
-      {
-        id: '2',
-        name: 'Plants',
-        category: 'Species',
+    labels: ['Distributor', 'Dealer', 'Retailer', 'Self', 'Sister', 'Excluded'],
+    categories: ['One Year', 'Two Years', 'Three Years', 'Four Years', 'Five Years', 'Six Years']
+};
+
+let show6thLegend = true;
+
+// Spline Area Chart
+let splineAreaChart = new ApexCharts(document.querySelector("#splineAreaChart"), {
+    chart: {
+        type: 'area',
+        height: 400,
+        width: 1100,
+    },
+    series: [{
+        name: 'Distributor',
+        data: chartData.series.distributor
+    }, {
+        name: 'Dealer',
+        data: chartData.series.dealer
+    }, {
+        name: 'Retailer',
+        data: chartData.series.retailer
+    }, {
+        name: 'Self',
+        data: chartData.series.self
+    }, {
+        name: 'Sister',
+        data: chartData.series.sister
+    }],
+    xaxis: {
+        categories: chartData.categories
+    },
+    yaxis: {
+        title: {
+            // text: 'Values'
+        }
+    },
+    legend: {
+        position: 'bottom',
+    }
+});
+
+// Polar Area Chart
+let polarAreaChart = new ApexCharts(document.querySelector("#polarAreaChart"), {
+    chart: {
+        type: 'polarArea',
+    },
+    series: chartData.series.distributor,
+    labels: chartData.labels,
+    responsive: [{
+        breakpoint: 600,
         options: {
-          nodeBGColorHover: '#d7c7e3',
-          borderColorHover: '#e563c7',
-        },
-        children: [
-          {
-            id: '3',
-            name: 'Mosses',
-            category: 'Plants',
-            options: {
-              nodeBGColorHover: '#d7c7e3',
-              borderColorHover: '#e563c7',
-            },
-          },
-          {
-            id: '4',
-            name: 'Ferns',
-            category: 'Plants',
-          },
-          {
-            id: '5',
-            name: 'Gymnosperms',
-            category: 'Plants',
-          },
-          {
-            id: '6',
-            name: 'Dicotyledens',
-            category: 'Plants',
-          },
-          {
-            id: '7',
-            name: 'Monocotyledens',
-            category: 'Plants',
-          },
-        ],
-      },
-      {
-        id: '8',
-        name: 'Fungi',
-      },
-      {
-        id: '9',
-        name: 'Lichens',
-      },
-      {
-        id: '10',
-        name: 'Animals',
-        children: [
-          {
-            id: '11',
-            name: 'Invertebrates',
-            category: 'Animals',
-            children: [
-              {
-                id: '12',
-                name: 'Insects',
-                category: 'Invertebrates',
-              },
-              {
-                id: '13',
-                name: 'Molluscs',
-                category: 'Invertebrates',
-              },
-              {
-                id: '14',
-                name: 'Crustaceans',
-                category: 'Invertebrates',
-              },
-              {
-                id: '15',
-                name: 'Others',
-                category: 'Invertebrates',
-              },
-            ],
-          },
-          {
-            id: '16',
-            name: 'Vertebrates',
-            category: 'Animals',
-            children: [
-              {
-                id: '17',
-                name: 'Fish',
-                category: 'Vertebrates',
-              },
-              {
-                id: '18',
-                name: 'Amphibians',
-                category: 'Vertebrates',
-              },
-              {
-                id: '19',
-                name: 'Reptiles',
-                category: 'Vertebrates',
-              },
-              {
-                id: '20',
-                name: 'Birds',
-                category: 'Vertebrates',
-              },
-              {
-                id: '21',
-                name: 'Mammals',
-                category: 'Vertebrates',
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  };
-  const distree = {
-    contentKey: 'name',
-    width: 800,
-    nodeWidth: 180,
-    nodeHeight: 50,
-    childrenSpacing: 150,
-    siblingSpacing: 30,
-    direction: 'top',
-    fontSize: '20px',
-    fontFamily: 'Quicksand, sans-serif',
-    fontWeight: 600,
-    fontColor: '#388ac4',
-    borderColorHover: '#388ac4',
-    nodeBGColorHover: '#d7d7d7',
-    enableToolbar: true,
-    canvasStyle: 'border: 1px solid black;background: #f6f6f6;',
-  };
-  const tree = new ApexTree(document.getElementById('dis-tree'), distree);
-  tree.render(datatree);
+            chart: {
+                height: 300
+            }
+        }
+    }],
+    legend: {
+        show: true,
+    }
+});
+
+splineAreaChart.render();
+polarAreaChart.render();
+
+// Render legends count with individual IDs
+function renderLegendsCount(series, labels) {
+    const legendIds = [
+        'legendDistributor',
+        'legendDealer',
+        'legendRetailer',
+        'legendSelf',
+        'legendSister',
+        'legendExtra'
+    ];
+
+    legendIds.forEach((id, index) => {
+        const legendElement = document.getElementById(id);
+        if (index < series.length) {
+            legendElement.textContent = `${series[index]}`;
+            legendElement.style.display = 'block';
+        } else {
+            legendElement.style.display = 'none'; // Hide the legend if not in the current series
+        }
+    });
+    
+}
+
+// Initial render of legends count
+renderLegendsCount(chartData.series.distributor, chartData.labels);
+
+// Button click event to switch chart data
+$('#btnAll').click(() => updateCharts(chartData.series.distributor, chartData.series.dealer, chartData.series.retailer, chartData.series.self, chartData.series.sister));
+$('#btnMonthly').click(() => updateCharts([44, 55, 41, 64, 22, 30], [53, 32, 33, 52, 13, 40], [24, 12, 34, 61, 11, 20], [15, 18, 27, 35, 20, 10], [12, 9, 21, 8, 30, 15]));
+$('#btnQuarterly').click(() => updateCharts([41, 52, 34, 61, 29, 25], [32, 41, 55, 64, 44, 35], [11, 21, 33, 53, 24, 30], [20, 30, 27, 35, 15, 22], [9, 12, 18, 22, 13, 28]));
+$('#btnYearly').click(() => updateCharts([44, 55, 41, 64, 22, 30], [53, 32, 33, 52, 13, 40], [24, 12, 34, 61, 11, 20], [15, 18, 27, 35, 20, 10], [12, 9, 21, 8, 30, 15]));
+
+// Toggle 6th legend visibility
+$('#excluded').click(function () {
+    show6thLegend = !show6thLegend;
+
+    const updatedSeries = show6thLegend ? chartData.series.distributor : chartData.series.distributor.slice(0, 5);
+    const updatedLabels = show6thLegend ? chartData.labels : chartData.labels.slice(0, 5);
+
+    polarAreaChart.updateOptions({
+        series: updatedSeries,
+        labels: updatedLabels,
+    });
+
+    renderLegendsCount(updatedSeries, updatedLabels); // Update legends count
+});
+
+function updateCharts(dDistributor, dDealer, dRetailer, dSelf, dSister) {
+    splineAreaChart.updateSeries([{
+        name: 'Distributor',
+        data: dDistributor
+    }, {
+        name: 'Dealer',
+        data: dDealer
+    }, {
+        name: 'Retailer',
+        data: dRetailer
+    }, {
+        name: 'Self',
+        data: dSelf
+    }, {
+        name: 'Sister',
+        data: dSister
+    }]);
+    polarAreaChart.updateSeries(dDistributor);
+    renderLegendsCount(dDistributor, chartData.labels); // Update legends count
+}
