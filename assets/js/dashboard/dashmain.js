@@ -171,6 +171,28 @@ let polarAreaChart = new ApexCharts(document.querySelector("#polarAreaChart"), {
         show: true,
     },
     // colors: ["#ff4c57", "#fe5d63", "#ff6e73", "#fe8a8d", "#fe9494"],
+    tooltip: {
+        y: {
+            formatter: function(value) {
+                // Calculate total of all values
+                const total = chartData.series.distributor.slice(0, 5).reduce((a, b) => a + b, 0);
+                // Calculate percentage
+                const percentage = ((value / total) * 100).toFixed(1);
+                return percentage + '%';
+            }
+        }
+    },
+    plotOptions: {
+        polarArea: {
+            dataLabels: {
+                formatter: function(val, opts) {
+                    const total = chartData.series.distributor.slice(0, 5).reduce((a, b) => a + b, 0);
+                    const percentage = ((opts.w.globals.series[opts.seriesIndex] / total) * 100).toFixed(1);
+                    return percentage + '%';
+                }
+            }
+        }
+    }
 });
 
 splineAreaChart.render();
